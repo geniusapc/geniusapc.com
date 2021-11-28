@@ -44,6 +44,7 @@ export default function SideNav() {
     return (
             <div id="side-nav">
               <div id="side-nav-left">
+                  <FontAwesomeIcon  className="side-nav-arrow"  size="1x"  icon={["fas", "arrow-left"]} />
                   <SocialLink/>
               </div>
               <ul  id= "side-nav-right">

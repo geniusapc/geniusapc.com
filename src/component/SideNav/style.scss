@@ -16,6 +16,7 @@
     transition: all 1s ease-in-out;
     animation: move-up .5s  ease-out;
     box-shadow: 1px 1px 2px -1px lighten($primaryColor, 10%);
+    overflow-y: hidden;
 
 };
 
@@ -25,6 +26,10 @@
     height: 100%;
     display: inline;
     position: relative;
+    & > .side-nav-arrow{
+        margin: 25px 10px 0;
+        color:  $primaryColor;
+    }
     &  span{
         opacity:0
     }
@@ -55,6 +60,7 @@
             height: 45px;
             color: $primaryColor;
             display: flex;
+            align-items: center;
         
             & > .social-link-logo{
                 padding-left:.5rem;    
