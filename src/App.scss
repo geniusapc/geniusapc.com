@@ -1,0 +1,17 @@
+@import "./sass/constants";
+@import "./sass/color";
+
+#main-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: $top-nav-height 1fr;  
+    height: 100vh; 
+}
+
+#pages{
+    position: relative;
+    height: calc(100vh - #{$top-nav-height} - #{$bottom-nav-height});
+    overflow-y: auto;
+    background:$tertiaryColor;
+}
+

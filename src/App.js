@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
+import Routes from "./routes/Routes";
+import "./sass/main.scss";
+import "./App.scss";
+
+import Header from "./component/Header/Header";
+import BottomNav from "./component/BottomNav/BottomNav";
+import SideNav from "./component/SideNav/SideNav";
+
+const App = () => {
+  const [sideNavIsOpen, setSideNavIsOpen] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main id="main-container">
+      <Header />
+      <div id="pages" onClick={() => setSideNavIsOpen(false)}>
+        {sideNavIsOpen && <SideNav />}
+        <Routes />
+      </div>
+      <BottomNav setSideNavIsOpen={setSideNavIsOpen} sideNavIsOpen={sideNavIsOpen} />
+    </main>
   );
-}
+};
 
 export default App;
