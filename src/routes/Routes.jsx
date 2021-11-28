@@ -4,6 +4,7 @@ import loading from "../assets/loading.gif";
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 
 const Construction = React.lazy(() => import( "../pages/Construction/Construction"));
+const Home = React.lazy(() => import( "../pages/Home/Home"));
 const FallBackIcon = <div style={{width:"100%" , height:"100%", display:"flex", alignItems:"center", justifyContent:"center"}}> 
   <img width="50px" src={loading} alt="loading .."/>
 </div>;
@@ -11,7 +12,7 @@ const FallBackIcon = <div style={{width:"100%" , height:"100%", display:"flex", 
 const AllRoutes = () => (
     <Suspense fallback={FallBackIcon}>
       <Routes >
-        <Route  path="/" element={<Construction/>} />
+        <Route  path="/" element={<Home/>} />
         <Route  path="/about" element={<Construction/>} />
         <Route  path="/project" element={<Construction/>} />
         <Route  path="/blog" element={<Construction/>} />
