@@ -24,7 +24,7 @@ export default function Home() {
         function draw(){
             ctx.fillStyle = "rgba(17,34,64, 0.2)";
             ctx.fillRect(0,0, c.width, c.height);
-            ctx.fillStyle="#64ffda";
+            ctx.fillStyle="#8892b0";
             ctx.font = font_size + "px arial";
             for (var i =0; i<drops.length; i++){
                 var text = binary[Math.floor(Math.random()*binary.length)]
@@ -57,7 +57,7 @@ export default function Home() {
                      <div className="folderName">{e.name}</div>
                 </Link>))}
             </div>
-                <canvas id="binary-fall"  ></canvas> 
+            <canvas id="binary-fall"  ></canvas> 
         </section>
     )
 }

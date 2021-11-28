@@ -7,9 +7,9 @@
     width:100%;
     position:relative;
     overflow: hidden;
-    
+
     #binary-fall{
-        z-index: 2;
+        z-index:-1;
         position:"absolute";
         width: 100%;
         height: 100%;
@@ -52,8 +52,9 @@
         &:hover{
             transform: scale(1.3);
         }
-        .folderName{
-            color:lighten($color: $primaryColor, $amount: 10) 
+        & .folderName{
+            color:lighten($color: $primaryColor, $amount: 10);
+        
         }
     }
     #About-folder{
