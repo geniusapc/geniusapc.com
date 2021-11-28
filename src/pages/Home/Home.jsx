@@ -48,6 +48,7 @@ export default function Home() {
     
     return (
         <section id="home">        
+            <canvas id="binary-fall"  ></canvas> 
             <div id="binary-image"></div> 
             <div id="intro-wrapper" >                  
                 <Bash/>
@@ -57,7 +58,7 @@ export default function Home() {
                      <div className="folderName">{e.name}</div>
                 </Link>))}
             </div>
-            <canvas id="binary-fall"  ></canvas> 
+            
         </section>
     )
 }
