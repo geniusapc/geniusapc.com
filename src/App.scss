@@ -11,7 +11,10 @@
 #pages{
     position: relative;
     height: calc(100vh - #{$top-nav-height} - #{$bottom-nav-height});
-    overflow-y: auto;
+    overflow-y: hidden;
     background:$tertiaryColor;
+    & > .pages-route{
+        width: 100%;
+        height: 100%;
+    }
 }
-
