@@ -23,7 +23,7 @@ export default function SideNav() {
       id:3,
       icon:["fas", "tasks"],
       name:"PROJECTS",
-      link:"/project"
+      link:"/projects"
     },
     {
       id:4,
