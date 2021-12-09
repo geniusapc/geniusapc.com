@@ -263,7 +263,10 @@
         figure{
             display: flex;
             justify-content: space-between;
-            margin: 10px 0 5px;
+            margin: 10px auto 5px;
+            img{
+                border-radius: $radius;
+            }
         }
         address > div{
             font-size: 12px;
