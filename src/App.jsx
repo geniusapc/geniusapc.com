@@ -15,7 +15,7 @@ const App = () => {
     <main id="main-container">
       <Header />
       <div id="pages">
-        {sideNavIsOpen && <SideNav />}
+        {sideNavIsOpen && <SideNav setSideNavIsOpen={setSideNavIsOpen} />}
         <div className="pages-route" onClick={() => setSideNavIsOpen(false)}>
           <Routes />
         </div>

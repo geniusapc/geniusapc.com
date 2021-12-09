@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import SocialLink from "../SocialLink/SocialLink"
 
-export default function SideNav() {
+export default function SideNav({setSideNavIsOpen}) {
   const links = [
     {
       id:1,
@@ -47,7 +47,7 @@ export default function SideNav() {
               <ul  id= "side-nav-right">
                 {links.map((e)=>(                
                   <li > 
-                  <Link className="side-nav-link" to={e.link} key={e.id}>
+                  <Link className="side-nav-link" onClick={()=>setSideNavIsOpen(false)} to={e.link} key={e.id}>
                     <FontAwesomeIcon className="side-nav-link-logo"  size="2x" icon={e.icon} /> <span>{e.name}</span> 
                   </Link>
                   </li>
