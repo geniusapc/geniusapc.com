@@ -1,5 +1,4 @@
 import React from 'react'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import Typewriter from "typewriter-effect";
 import "./style.scss";
 
@@ -12,11 +11,6 @@ function Bash() {
                         <div id="dot-2" ></div>
                         <div id="dot-3" ></div> 
                 </div>
-                <div className="command-nav-title">
-                    <FontAwesomeIcon  icon={['fas', 'home']} size="1x" color="red" />
-                    <span>Prince -- -Arthur </span>  
-                </div>
-
             </div>
             <div id="command-body">
                 geniusapc :~

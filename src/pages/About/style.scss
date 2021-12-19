@@ -54,7 +54,7 @@
         color:lighten($secondaryColor, 40%);
         align-items: center; 
         width: 100%;
-        background: lighten($black, 10%);
+        background: lighten($black, 5%);
         padding-left: 2px;
         
 
@@ -73,7 +73,7 @@
     #dsk-open-tabs{
             width: 80px;
             height: 100%;
-            background: lighten($black, 10%);
+            background: lighten($black, 5%);
             border-radius:0 7px 0 0;
             position: relative;
             overflow: hidden;

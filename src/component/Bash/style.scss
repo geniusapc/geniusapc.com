@@ -2,11 +2,12 @@
 @import "../../sass/color";
 #command-wrapper{
     position:relative;
-    width:60%;
+    width:20px;
+    border-radius: 5px;
+    background:$black;
+    margin-top: 30px;
 
     #command-nav{
-        @include  border(top);
-        background:$secondaryColor;
         width: 100%;
         padding-left: 1rem;
         height: 1.5rem;
@@ -14,30 +15,21 @@
         align-items: center;
         @include mac-dots($size:10px);
     } 
-    .command-nav-title{
-        padding-left: 1rem;
-        color: darken($primaryColor, 20%);
-        & span{ 
-            margin-left: 10px;
-        }
-    }
-    
+  
     #command-body{
-        box-shadow: -1px 1px 2px -1px lighten($primaryColor, 20%), 1px 1px 2px -1px lighten($primaryColor, 20%);
-        background: $tertiaryColor;
         width: 100%;
         height:calc(100% - 1.5rem);
         color:$primaryColor;
         line-height: 2em;
-        font-size: 20px;
-        padding-left: .3rem;  
+        font-size: 18px;
+        padding-left: .8rem;  
      
         .Typewriter {
             display: inline;
      
         }
         .Typewriter__wrapper {
-            color: $primaryColor;
+            color: lighten($primaryColor, 10%);
             margin-left: 0.2em;
         }
       
