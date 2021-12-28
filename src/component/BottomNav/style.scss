@@ -2,7 +2,8 @@
 @import "../../sass/constants";
 
 #bottom-nav{    
-    background:darken($tertiaryColor, 10%);
+    position: relative;
+    background:darken($tertiaryColor, 5%);
     width:100%; 
     height:$bottom-nav-height; 
     position:fixed;
@@ -12,29 +13,32 @@
     align-items: center; 
     justify-content: space-between;
    
-    .nav{
-        width:60px;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        &:hover{
-            background-color: lighten($tertiaryColor,  20%);
-        }
-    }    
+    .windows{
+        color: $primaryColor; 
+        margin-left: 10px ;
+    
+    }
+    #window-pointer{
+        position: absolute;
+        top:-50px;
+        left:50px;
+        color: $folderColor; 
+        animation: bounce 2s linear infinite;
+        transition: all .2s ease-in-out;
+    
+    }
+    
 }
 
-#window-logo{
-    width: 90%;
-    height: 45%;
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    transform: perspective(150px) rotateY(-60deg);
-    & > span{
-        width: 90%;
-        height: 90%;
-        background: $primaryColor;   
-    }    
+@keyframes bounce{
+    0%{
+        opacity:0;
+        top:-60px
+    } 
+    100%{
+        opacity:1;
+    }
 }
+
+
 

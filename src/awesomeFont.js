@@ -5,6 +5,7 @@ import {
   faTwitter,
   faGithubSquare,
   faFacebookSquare,
+  faWindows
 } from "@fortawesome/free-brands-svg-icons";
 import {
   faFolderOpen,
@@ -18,7 +19,8 @@ import {
   faArrowRight,
   faArrowLeft,
   faTimes,
-  faMinus
+  faMinus,
+  faHandPointLeft
 } from "@fortawesome/free-solid-svg-icons";
 import { faIdCard } from "@fortawesome/free-regular-svg-icons";
 
@@ -39,5 +41,7 @@ library.add(
   faArrowRight,
   faArrowLeft,
   faTimes,
-  faMinus
+  faMinus,
+  faHandPointLeft,
+  faWindows
 );

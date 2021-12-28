@@ -70,6 +70,24 @@
     }
 }
 
+@mixin button_dft(){
+    background: $tertiaryColor;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid  $primaryColor;
+    height: 35px;
+    color:$primaryColor;
+    &:hover{
+        background-color: lighten($tertiaryColor,  10%);
+        transform: scale(1.03);
+        transition: all .3s ease-in;
+    }
+
+}
+
+
+
+
 
 @mixin search-input($width:250px, $height:20px){
     margin-left:10px;

@@ -7,25 +7,14 @@
     z-index:1;
     width:100%;
     height: $top-nav-height;    
-    background: darken($tertiaryColor, 4%);
+    background: $tertiaryColor;
  
     #logo{
-
         margin-left: 10px;
-
-    
         & > img{
             width:75px;
             height:100%;
             color:$primaryColor;
-
-        }
-        & path {
-            fill: blue;
-        }
-     
-
-
-          
+        } 
     }
 }

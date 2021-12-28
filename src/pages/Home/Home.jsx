@@ -8,7 +8,7 @@ import computer from "../../assets/Man-Using-Computer.svg";
 export default function Home() {
 
   useEffect(() => {
-    const me = ()=>{
+    const binaryFall = ()=>{
         var c = document.getElementById("binary-fall");
         var ctx = c.getContext("2d");
         c.width =  window.innerWidth;
@@ -37,7 +37,7 @@ export default function Home() {
         } 
         setInterval(draw, 100)
     }
-    me()
+    binaryFall()
 }, [])
 
 
@@ -51,9 +51,8 @@ export default function Home() {
         <section id="home">        
             <img id="computer-svg" src={computer} alt="computer" />
             <canvas id="binary-fall"></canvas> 
-            <div id="binary-image"></div> 
-            
-            
+            <div id="binary-image"></div>             
+        
             <div id="home-inner" >                  
                 <Bash/>
                {folders.map((e)=>(

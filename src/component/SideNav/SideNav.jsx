@@ -46,7 +46,7 @@ export default function SideNav({setSideNavIsOpen}) {
               </div>
               <ul  id= "side-nav-right">
                 {links.map((e)=>(                
-                  <li > 
+                  <li key={e.id}> 
                   <Link className="side-nav-link" onClick={()=>setSideNavIsOpen(false)} to={e.link} key={e.id}>
                     <FontAwesomeIcon className="side-nav-link-logo"  size="2x" icon={e.icon} /> <span>{e.name}</span> 
                   </Link>

@@ -3,6 +3,7 @@
 
 
 #home{
+    background: $tertiaryColor;
     height: 100%;
     width:100%;
     position:relative;
@@ -15,7 +16,7 @@
     }
     #computer-svg{
         position: absolute;
-        bottom: 5%;
+        top: 50vh;
         left:22%;
         width: 200px;;
         opacity: 0.8;
@@ -43,7 +44,7 @@
         top:10px;
         width:250px;
         height:50%;
-        animation: movecommandWrapper 1s ease-in, fadeOut 1s ease-in-out;
+        animation: movecommandWrapper 2s ease-in, fadeOut 1s ease-in-out;
     }
 
     .icon-wrapper{
@@ -112,7 +113,7 @@
     #command-wrapper{
         right:150px !important;
         width:40%  !important;
-        height:50%  !important;
+        height:250px  !important;
     }
 
     #home-inner{     
@@ -121,12 +122,12 @@
         align-content: center;
     
         #command-wrapper{
-            position: absolute;
-            right:10px;
-            top:10px;
-            width:250px;
-            height:50%;
-            animation: movecommandWrapper 1s ease-in, fadeOut 1s ease-in-out;
+            // position: absolute;
+            // right:10px;
+            // top:10px;
+            // width:250px;
+            // height:50%;
+            // animation: movecommandWrapper 1s ease-in, fadeOut 1s ease-in-out;
         }
     
         .icon-wrapper{
