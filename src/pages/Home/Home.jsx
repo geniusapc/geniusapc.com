@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import "./style.scss";
 import Bash from "../../component/Bash/Bash"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
-import computer from "../../assets/Man-Using-Computer.svg";
+
 
 export default function Home() {
 
@@ -48,20 +48,17 @@ export default function Home() {
     ]
     
     return (
-        <section id="home">        
-            <img id="computer-svg" src={computer} alt="computer" />
-            <canvas id="binary-fall"></canvas> 
-            <div id="binary-image"></div>             
-        
-            <div id="home-inner" >                  
-                <Bash/>
-               {folders.map((e)=>(
-                 <Link className="icon-wrapper" to={e.link} key={e.id} id={e.tagId}>
-                    <FontAwesomeIcon className="folder"  transform={{ rotate: 270 }}  icon='folder-open' flip="horizontal"   />
-                     <div className="folderName">{e.name}</div>
-                </Link>))}
-            </div>
-            
+        <section id="home">   
+         <canvas id="binary-fall"></canvas> 
+         <div id="binary-image"></div>  
+      
+         {folders.map((e)=>(
+            <Link className="folder-wrapper" to={e.link} key={e.id} id={e.tagId}>
+                <FontAwesomeIcon className="folder"  transform={{ rotate: 270 }}  icon='folder-open' flip="horizontal"   />
+                <div className="folderName">{e.name}</div>
+        </Link>))}
+
+        <Bash/>            
         </section>
     )
 }
