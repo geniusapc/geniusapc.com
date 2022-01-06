@@ -1,13 +1,13 @@
 @import "../../sass/color";
 @import "../../sass/constants";
+@import "../../sass/mixin";
 
 #side-nav{    
     display:flex;
     flex-direction: row;
     position: absolute;
-    background:$tertiaryColor;
-    box-shadow: -1px 3px 3px -1px rgba(15, 15, 15, 0.75);
-    color:darken( $secondaryColor,  20%);
+    background:$secondaryColor;
+    box-shadow: -1px 3px 3px -1px $secondaryColor;
     bottom: 0;
     left:0;
     width: 350px;
@@ -21,14 +21,14 @@
 };
 
 #side-nav-left{
-    background:linear-gradient(0deg, $tertiaryColor, lighten($tertiaryColor , 10%), $tertiaryColor);
+    background:linear-gradient(0deg, $secondaryColor, lighten($secondaryColor , 2%), $secondaryColor);
     width:50px;
     height: 100%;
     display: inline;
     position: relative;
     & > .side-nav-arrow{
         margin: 25px 10px 0;
-        color:  $primaryColor;
+        color:  $fgDefault;
     }
     &  span{
         opacity:0
@@ -49,21 +49,21 @@
         position: absolute;
         bottom:0;
         width:100%;
-        padding-bottom: 100px;
-         & a> span{
-            color:$primaryColor;
-            
-        }
+        padding-bottom: 80px;
          
         & > .social-links{
             width: 100%; 
             height: 45px;
-            color: $primaryColor;
+            margin-bottom: 2px;
+            color: $fgDefault;
             display: flex;
             align-items: center;
+            padding-left:10px;
+         
         
-            & > .social-link-logo{
-                padding-left:.5rem;    
+            & > .social-link-icon{
+                font-size: 1.5rem;
+                   
             };
          
      
@@ -72,8 +72,8 @@
                 margin-left:1.1rem;
             }
             &:hover{
-                background-color: lighten($color: $tertiaryColor, $amount: 20%);
-                border: 1px solid $primaryColor;
+                background-color:lighten($secondaryColor, 20%);
+                border: 1px solid $fgDefault;
             }
         }
     } 
@@ -86,20 +86,14 @@
     margin-left: 50px;
     padding:60px;
     .side-nav-link{
-        color: $primaryColor;
+        @include button();
+        display: flex;
         height:70px;
         width:100%;
-        margin-bottom: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid $primaryColor;
-        &:hover{
-            background-color: lighten($color: $tertiaryColor, $amount: 20%);
-            transform: scale(1.05);
-            transition: all .2s ease-in;
-        }
-        span{
+        margin-bottom: 20px;
+        color: $tertiaryColor;
+        span{  
+            color: inherit;
             margin: 10px;
         }
    

@@ -3,18 +3,17 @@
 @import "../../sass/constants";
 
 #nav-wrapper{
-    box-shadow:0px 2px 8px -1px $primaryColor;
+    box-shadow:0px 2px 8px -1px $secondaryColor;
     z-index:1;
     width:100%;
     height: $top-nav-height;    
-    background: $tertiaryColor;
+    background: $primaryColor;
  
     #logo{
         margin-left: 10px;
         & > img{
             width:75px;
             height:100%;
-            color:$primaryColor;
         } 
     }
 }

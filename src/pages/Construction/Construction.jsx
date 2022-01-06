@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.scss";
-import construction from "../../assets/construction.svg";
+import construction from "../../assets/img/construction.svg";
 
 const ConstructionPage = () => (
   <div id="construction">

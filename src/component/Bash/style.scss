@@ -19,7 +19,7 @@
     #command-body{
         width: 100%;
         height:calc(100% - 1.5rem);
-        color:$primaryColor;
+        color:$fgDefault;
         line-height: 2em;
         font-size: 18px;
         padding-left: .8rem;  
@@ -29,7 +29,7 @@
      
         }
         .Typewriter__wrapper {
-            color: lighten($primaryColor, 10%);
+            color: $fgDefault;
             margin-left: 0.2em;
         }
       

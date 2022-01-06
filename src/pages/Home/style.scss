@@ -3,14 +3,13 @@
 
 
 #home{
-    background: $tertiaryColor;
     height: 100%;
     width:100%;
     position:relative;
     overflow: hidden;
 
     #binary-fall{
-        opacity: 0.5;
+        opacity: 0.2;
         width: 100%;
         height: 100%;
     }
@@ -20,51 +19,42 @@
         right:10px;
         top:10px;
         width:250px;
-        height:250px;
+        height:300px;
         animation: movecommandWrapperSm 2s ease-in, fadeOut 1s ease-in-out;
     }
     
-    #About-folder{
+    & .folders{
         position: absolute;
-        top:100px;
-        left:5px;
-    }
-    #Contact-folder{
-        position: absolute;
-        top:170px;
-        left:5px;
-    }
-    #Projects-folder{
-        position: absolute;
-        top:240px;
-        left:5px;
+        top:50px;
+        left:15px;
+        width: 170px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
     }
 
     .folder-wrapper{
-        position: absolute;
+        margin-bottom: 50px;
+        width:80px;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
         animation:fadeOut 3s ease-in;
         transition: all .4s ease-in-out;
-        margin-left: 20px;
-        .folder{
-            color: $folderColor;
-            font-size: 1rem;
+
+        & .folder{
+                    color: $folderColor;
+                    font-size: 1rem;
+                    margin-bottom: 7px;
+        }
+        & .folderName{
+            color:$fgDefault;
+            font-size: 10px;
         }
         &:hover{
             transform: scale(1.2);
         }
-        & .folderName{
-            color:$primaryColor;
-            font-size: 10px;
-        }
-    }
-
-    #binary-image{
-        background: url("/assets/binary-backgroud.png")  repeat fixed;
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
-        animation: fillBinary 20s linear infinite;
+   
     }
 
 }
@@ -78,28 +68,7 @@
             height:250px;
             animation: movecommandWrapper 2s ease-in, fadeOut 1s ease-in-out;    
         }
-  
-        #About-folder{
-            top:40px;
-            left:15px;
-        }
-        #Contact-folder{
-            top:140px;
-            left:15px;
-        }
-        #Projects-folder{
-            top:240px;
-            left:15px;
-        }
-
-        .folder{
-            font-size: 1.5rem !important;
-        }
-                
-        & .folderName{
-            font-size: 12px !important;
-        }
-            }
+    }
 
 } 
 
@@ -109,24 +78,6 @@
     } 
     100%{
         opacity:1;
-    }
-}
-
-@keyframes fillBinary{
-    0%{
-        height:0%;
-    }
-    48%{
-        height:0%;
-    }
-    70%{
-        height:100% ;
-    }
-    90%{
-        height:100% ;
-    }
-    100%{
-        height:0%;
     }
 }
 

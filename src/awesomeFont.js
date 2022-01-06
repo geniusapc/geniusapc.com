@@ -5,7 +5,14 @@ import {
   faTwitter,
   faGithubSquare,
   faFacebookSquare,
-  faWindows
+  faWindows,
+  faAws,
+  faLinux,
+  faPython,
+  faReact,
+  faNode,
+  faJs,
+  faDocker
 } from "@fortawesome/free-brands-svg-icons";
 import {
   faFolderOpen,
@@ -20,7 +27,10 @@ import {
   faArrowLeft,
   faTimes,
   faMinus,
-  faHandPointLeft
+  faHandPointLeft,
+  faExternalLinkAlt,
+  faPlus,
+  faLayerGroup
 } from "@fortawesome/free-solid-svg-icons";
 import { faIdCard } from "@fortawesome/free-regular-svg-icons";
 
@@ -43,5 +53,16 @@ library.add(
   faTimes,
   faMinus,
   faHandPointLeft,
-  faWindows
+  faWindows,
+  faAws,
+  faLinux,
+  faPython,
+  faReact,
+  faNode,
+  faJs,
+  faDocker,
+  faExternalLinkAlt,
+  faPlus,
+  faLayerGroup
+
 );

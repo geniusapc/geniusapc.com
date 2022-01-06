@@ -23,7 +23,7 @@ export default function Home() {
         for(var x=0; x<columns; x++){drops[x]=1}   
 
         function draw(){
-            ctx.fillStyle = "rgba(17,34,64, 0.2)";
+            ctx.fillStyle = "rgba(13,17,23, 0.2)";
             ctx.fillRect(0,0, c.width, c.height);
             ctx.fillStyle="#8892b0";
             ctx.font = font_size + "px arial";
@@ -44,19 +44,24 @@ export default function Home() {
     const folders =  [
         {id:1,name:"About", tagId:"About-folder", link:"/about"},
         {id:2,name:"Contact", tagId:"Contact-folder", link:"/contact"},
-        {id:3,name:"Projects", tagId:"Projects-folder", link:"/projects"}
+        {id:3,name:"Projects", tagId:"Projects-folder", link:"/projects"},
+        {id:4,name:"Certification", tagId:"certification-folder", link:"/about#certifications"},
+        {id:5,name:"Technologies", tagId:"technology-folder", link:"/about#technologies"},
     ]
     
     return (
         <section id="home">   
          <canvas id="binary-fall"></canvas> 
-         <div id="binary-image"></div>  
       
-         {folders.map((e)=>(
-            <Link className="folder-wrapper" to={e.link} key={e.id} id={e.tagId}>
-                <FontAwesomeIcon className="folder"  transform={{ rotate: 270 }}  icon='folder-open' flip="horizontal"   />
-                <div className="folderName">{e.name}</div>
-        </Link>))}
+      <section className='folders'>
+        {folders.map((e)=>(
+                <Link className="folder-wrapper" to={e.link} key={e.id} id={e.tagId}>
+                    <FontAwesomeIcon className="folder"  transform={{ rotate: 270 }}  icon='folder-open' flip="horizontal"   />
+                    <div className="folderName">{e.name}</div>
+            </Link>)
+        )}
+      </section>
+
 
         <Bash/>            
         </section>

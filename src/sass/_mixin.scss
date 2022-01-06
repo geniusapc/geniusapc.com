@@ -38,13 +38,19 @@
 }
 
 @mixin button(){
-        color: $primaryColor;
-        display: inline;
+        display: flex;
         align-items: center;
         justify-content: center;
-        border: 1px solid $primaryColor;
-
-      
+        color: $fgDefault;
+        background: $secondaryColor;
+        border-radius: $radius;
+        padding:  3px 5px;
+        border: 1px solid $tertiaryColor;
+        &:hover{
+            transition: all .2s ease-in;
+            transform: scale(1.03);
+            background-color: lighten($primaryColor, 10%);
+        } 
 }
 
 @mixin mac-dots($size:15px){
@@ -70,20 +76,7 @@
     }
 }
 
-@mixin button_dft(){
-    background: $tertiaryColor;
-    width: 100%;
-    border-radius: 5px;
-    border: 1px solid  $primaryColor;
-    height: 35px;
-    color:$primaryColor;
-    &:hover{
-        background-color: lighten($tertiaryColor,  10%);
-        transform: scale(1.03);
-        transition: all .3s ease-in;
-    }
 
-}
 
 
 

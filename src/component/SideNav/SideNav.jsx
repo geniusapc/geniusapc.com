@@ -25,19 +25,21 @@ export default function SideNav({setSideNavIsOpen}) {
       name:"PROJECTS",
       link:"/projects"
     },
+
     {
       id:4,
-      icon:["fas", "file-signature"], 
-      name:"BLOG",
-      link:"/blog"
-    },
-    {
-      id:5,
       icon:["fas", "phone-volume"],
       name:"CONTACT",
       link:"/contact"
+    },
+    {
+      id:5,
+      icon:["fas", "layer-group"],
+      name:"Technologies",
+      link:"/about#technologies"
     }
   ]
+
     return (
             <aside id="side-nav">
               <div id="side-nav-left">

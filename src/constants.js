@@ -39,7 +39,7 @@ const constant = {
     role:"FullStack Developer", 
 
     aboutMe: `Geniusapc is a fullstack developer with hands-on 
-              experience building web applications that are secured, 
+              experience building web applications that is secured, 
               scalable and high performing. He is also an ethical hacking and 
               networking enthusiast`,
 
