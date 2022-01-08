@@ -13,6 +13,7 @@
         height: 1.5rem;
         display: flex;
         align-items: center;
+        border-bottom: 1px solid $secondaryColor;
         @include mac-dots($size:10px);
     } 
   
