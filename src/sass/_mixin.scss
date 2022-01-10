@@ -79,9 +79,6 @@
 
 
 
-
-
-
 @mixin search-input($width:250px, $height:20px){
     margin-left:10px;
     padding-left:10px;
@@ -102,7 +99,7 @@
     }   
 }
 
-@mixin custom-scroll-bar() {
+@mixin custom-scroll-bar($bg:#999) {
     &::-webkit-scrollbar {
       border-radius: 5px;
       height: 5px;
@@ -110,7 +107,7 @@
     }
   
     &::-webkit-scrollbar-thumb {
-      background: #999;
+      background: $bg;
       border-radius: 5px;
     }
   
