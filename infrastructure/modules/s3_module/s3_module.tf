@@ -1,16 +1,10 @@
-variable "app_name" {}
-
-locals {
-  env = terraform.workspace
+module "shared_vars" {
+  source = "../shared_vars"
 }
 
 resource "aws_s3_bucket" "site" {
-  bucket = "${var.app_name}-${local.env}"
-
-  tags = {
-    Name        = "${var.app_name}"
-    Environment = local.env
-  }
+  bucket = "${module.shared_vars.app_name}-${module.shared_vars.env}"
+  tags   = module.shared_vars.common_tags
 }
 
 resource "aws_s3_bucket_acl" "site_acl" {
@@ -19,6 +13,5 @@ resource "aws_s3_bucket_acl" "site_acl" {
 }
 
 output "site_id" {
-    value =   aws_s3_bucket.site.id
-  
+  value = aws_s3_bucket.site.id
 }
