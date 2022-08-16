@@ -1,7 +1,3 @@
-locals {
-  env = terraform.workspace
-}
-
 terraform {
   backend "s3" {
     bucket = "geniusapc-terraform-backend-bucket"
