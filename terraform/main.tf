@@ -6,6 +6,17 @@ terraform {
   }
 }
 
+module "shared_vars" {
+  source = "./modules/shared_vars"
+}
+
+
 module "s3_module" {
   source = "./modules/s3_module"
 }
+module "backend_services" {
+  source = "./backend_services"
+}
+
+
+
