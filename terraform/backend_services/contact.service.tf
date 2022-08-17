@@ -12,8 +12,8 @@ module "contact_module" {
 
 
 
-resource "aws_apigatewayv2_route" "get_hello" {
+resource "aws_apigatewayv2_route" "post_contact" {
   api_id    = module.contact_module.api_gateway_id
-  route_key = "GET /contact"
+  route_key = "POST /contact"
   target    = "integrations/${module.contact_module.api_gateway_integration_id}"
 }
