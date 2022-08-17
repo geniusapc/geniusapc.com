@@ -1,7 +1,7 @@
 terra-format:
-	cd infrastructure && terraform fmt --recursive
+	cd terraform && terraform fmt --recursive
 terra-check:
-	cd infrastructure &&  terraform init && terraform plan
+	cd terraform &&  terraform init && terraform plan
 terra-pre-push: terra-format terra-check
 terra-push:
-	cd infrastructure && terraform apply --auto-approve
+	cd terraform && terraform apply --auto-approve
