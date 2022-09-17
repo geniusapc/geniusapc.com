@@ -50,6 +50,7 @@ export default function SideNav({ setSideNavIsOpen }) {
           className="side-nav-arrow"
           size="1x"
           icon={faArrowLeft}
+          onClick={() => setSideNavIsOpen(false)}
         />
 
         <section className="social-link-wrapper">
