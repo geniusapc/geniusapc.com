@@ -1,118 +1,101 @@
-
 @import "color";
 @import "constants";
 
-@mixin browser-dot($size:15px) {
-    box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
-    background-color: $tertiaryColor;
-    margin-right: 5px;
-    height: $size;
-    width: $size;
-    border-radius: 50%;    
+@mixin browser-dot($size: 15px) {
+  box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
+  background-color: $tertiaryColor;
+  margin-right: 5px;
+  height: $size;
+  width: $size;
+  border-radius: 50%;
 }
 
-@mixin border($side:all, $size:1px) {
-    border: $size solid $borderColor;
-    box-shadow: -1px 1px 3px -1px rgba(15, 15, 15, 0.75);
-    @if $side==top{
-        border-radius: $radius $radius 0  0; 
-    }
-    @else if $side==right{
-        border-radius: 0 $radius $radius 0; 
-    }
-    @else if $side==bottom{
-        border-radius:  0 0 $radius 5px ; 
-    }
-    @else if $side==left{
-        border-radius:  $radius 0 0 $radius; 
-    }
-    @else{
-        border-radius: $radius $radius $radius $radius; 
-    }      
+@mixin border($side: all, $size: 1px) {
+  border: $size solid $borderColor;
+  box-shadow: -1px 1px 3px -1px rgba(15, 15, 15, 0.75);
+  @if $side==top {
+    border-radius: $radius $radius 0 0;
+  } @else if $side==right {
+    border-radius: 0 $radius $radius 0;
+  } @else if $side==bottom {
+    border-radius: 0 0 $radius 5px;
+  } @else if $side==left {
+    border-radius: $radius 0 0 $radius;
+  } @else {
+    border-radius: $radius $radius $radius $radius;
+  }
 }
 
 @mixin round($size) {
-    height: $size;
-    width: $size;
-    border-radius: 50%;
+  height: $size;
+  width: $size;
+  border-radius: 50%;
 }
 
-@mixin button(){
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: $fgDefault;
-        background: $secondaryColor;
-        border-radius: $radius;
-        padding:  3px 5px;
-        border: 1px solid $tertiaryColor;
-        &:hover{
-            transition: all .2s ease-in;
-            transform: scale(1.03);
-            background-color: lighten($primaryColor, 10%);
-        } 
+@mixin button() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $fgDefault;
+  background: $secondaryColor;
+  border-radius: $radius;
+  padding: 3px 5px;
+  border: 1px solid $tertiaryColor;
+  &:hover {
+    transition: all 0.2s ease-in;
+    transform: scale(1.03);
+    background-color: lighten($primaryColor, 10%);
+  }
 }
 
-@mixin mac-dots($size:15px){
-    .dots-wrapper{
-        display: flex;
-        padding:  0 ;
-        & div{
-            border: 1px solid $borderColor;
-            box-shadow: $box-shadow;
-            background-color: $tertiaryColor;
-            margin-right: 5px;
-            @include round($size);
-        }
-        #dot-1{
-            background-color: #FC6858;
-        }
-        #dot-2{
-            background-color: #FEC02f;
-        }
-        #dot-3{
-            background-color: #2AC43E;
-        }
+@mixin mac-dots($size: 15px) {
+  .dots-wrapper {
+    display: flex;
+    padding: 0;
+    & div {
+      border: 1px solid $borderColor;
+      box-shadow: $box-shadow;
+      background-color: $tertiaryColor;
+      margin-right: 5px;
+      @include round($size);
     }
-}
-
-
-
-
-@mixin search-input($width:250px, $height:20px){
-    margin-left:10px;
-    padding-left:10px;
-    width:$width;
-    height: $height;
-    border-radius: 10px;
-    border:0px;
-    color:$tertiaryColor;
-    outline:none;   
-    font-size: 8px; 
-}
-@mixin search-engine-logo {
-    padding-left: 5px;
-    & span{
-        color: darken($primaryColor, 1%);
-        text-shadow: 1px 2px 1px $secondaryColor;
-        margin-right: 1px;
-    }   
-}
-
-@mixin custom-scroll-bar($bg:#999) {
-    &::-webkit-scrollbar {
-      border-radius: 5px;
-      height: 5px;
-      width: 5px;
+    #dot-1 {
+      background-color: #fc6858;
     }
-  
-    &::-webkit-scrollbar-thumb {
-      background: $bg;
-      border-radius: 5px;
+    #dot-2 {
+      background-color: #fec02f;
     }
-  
-    &::-webkit-scrollbar-track {
-      border-radius: 5px;
+    #dot-3 {
+      background-color: #2ac43e;
     }
   }
-  
+}
+
+@mixin search-input($width: 250px, $height: 20px) {
+  margin-left: 10px;
+  padding-left: 10px;
+  width: $width;
+  height: $height;
+  border-radius: 10px;
+  border: 0px;
+  color: $tertiaryColor;
+  outline: none;
+  font-size: 8px;
+}
+
+@mixin custom-scroll-bar($bg: #999) {
+  &::-webkit-scrollbar {
+    border-radius: 5px;
+    height: 5px;
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $bg;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 5px;
+  }
+}
