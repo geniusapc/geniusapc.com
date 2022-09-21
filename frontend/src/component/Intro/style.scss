@@ -1,0 +1,155 @@
+@import "../../sass/mixin";
+@import "../../sass/color";
+
+#intro {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+  padding-top: 50px;
+  background: $color-bg;
+
+  #binary-fall {
+    position: absolute;
+    opacity: 0.1;
+    width: 100%;
+    height: 90vh;
+  }
+
+  #bash-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    position: relative;
+
+    #command-wrapper {
+      width: 100%;
+      height: 300px;
+      animation: movecommandWrapperSm 2s ease-in, fadeOut 1s ease-in-out;
+    }
+  }
+
+  .folders {
+    width: 30%;
+    height: 100%;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .folder-wrapper {
+    margin-bottom: 50px;
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeOut 3s ease-in;
+    transition: all 0.4s ease-in-out;
+
+    & .folder {
+      color: $folderColor;
+      font-size: 1.2rem;
+      margin-bottom: 7px;
+    }
+    & .folderName {
+      color: $fgDefault;
+      font-size: 0.8rem;
+    }
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+#command-wrapper {
+  position: relative;
+  width: 20px;
+  border-radius: 5px;
+  background: $black;
+  margin-top: 30px;
+
+  #command-nav {
+    width: 100%;
+    padding-left: 1rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $secondaryColor;
+    @include mac-dots($size: 10px);
+  }
+
+  #command-body {
+    width: 100%;
+    height: calc(100% - 1.5rem);
+    color: $fgDefault;
+    line-height: 2em;
+    font-size: 18px;
+    padding-left: 0.8rem;
+
+    .Typewriter {
+      display: inline;
+    }
+    .Typewriter__wrapper {
+      color: $fgDefault;
+      margin-left: 0.2em;
+    }
+  }
+}
+
+
+@media screen and (min-width: $smScreen) {
+  #intro {
+    
+    #binary-fall {
+      opacity: 0.08;
+    }
+    #bash-section {
+      width: 80%;
+    }
+    #command-wrapper {
+      width: 50% !important;
+      height: 250px;
+      animation: movecommandWrapper 2s ease-in, fadeOut 1s ease-in-out;
+    }
+    .folders {
+      width: 20%;
+      height: 70%;
+      margin: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes movecommandWrapper {
+  0% {
+    top: -20px;
+    right: -50px;
+  }
+  80% {
+    top: 15px;
+    right: 50px;
+  }
+}
+
+@keyframes movecommandWrapperSm {
+  0% {
+    top: -20px;
+    right: -20px;
+  }
+  80% {
+    top: 2px;
+    right: 2px;
+  }
+}

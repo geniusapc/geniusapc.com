@@ -1,0 +1,47 @@
+@import "../../sass/color";
+@import "../../sass/constants";
+@import "../../sass/mixin";
+
+
+#skills {
+  width: 100%;
+  padding-bottom:0px;
+    
+     
+  & > #skills-container {
+    display: flex;
+    justify-content:space-around;
+    flex-wrap:wrap;
+    gap: 2rem 2rem;
+  }
+  
+  .technologies {
+  width: 350px;
+  min-height: 400px;
+  background: #0d1117;
+
+  &:hover {
+    background: none !important;
+    border: 0.1px solid $color-primary;
+    transition: all 0.2s ease-in-out;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 2rem;
+    padding: 1rem;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    gap:.5rem;
+  }
+}
+
+
+}
+
+ 
+

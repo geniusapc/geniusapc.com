@@ -1,22 +1,17 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import constant from "../../constants";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+
 import "./style.scss";
 
 const SocialLink = ({ socialLink }) => {
-  let socailLinks = socialLink
-    ? constant.personalInfo.socailLinks.filter((e) => !!e.socailLink)
-    : constant.personalInfo.socailLinks;
-
   return (
-    <section className="social-link-wrapper">
-      {socailLinks.map((e) => (
-        <a href={e.link} key={e.id} className="social-links">
-          <FontAwesomeIcon className="social-link-icon"  icon={e.icon} />
-          <span className="social-link-name">{e.name}</span>
-        </a>
-      ))}
-    </section>
+    <div className="social-link-wrapper">
+      <a href={"/#"} className="social-links">
+        <FontAwesomeIcon className="social-link-icon" icon={faLinkedin} />
+        <span className="social-link-name">{"LinkedIn"}</span>
+      </a>
+    </div>
   );
 };
 
