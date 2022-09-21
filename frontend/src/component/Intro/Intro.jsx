@@ -25,7 +25,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div id="home">
+    <div id="intro">
       <div className="folders">
         {folders.map((e) => (
           <Link className="folder-wrapper" to={e.link} key={e.id} id={e.tagId}>

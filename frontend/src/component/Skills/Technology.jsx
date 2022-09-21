@@ -5,7 +5,7 @@ import "./style.scss";
 
 export default function Technologies({ stacks, title }) {
   return (
-    <div className="container technologies">
+    <div className="technologies">
       <h2>{title}</h2>
       <ul>
         {stacks.map((e) => (

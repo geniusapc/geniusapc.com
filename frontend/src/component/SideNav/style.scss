@@ -3,102 +3,118 @@
 @import "../../sass/mixin";
 
 #side-nav {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 450px;
-  height: calc(100vh - 70px);
+  position:fixed;
+  bottom:0px;
+  height: 70px;
+  width:100vw;
   display: flex;
-  // flex-direction: row;
-  background: $secondaryColor;
-  box-shadow: -1px 3px 3px -1px $secondaryColor;
-
-  z-index: 3;
-  transition: all 1s ease-in-out;
-  animation: move-up 0.5s ease-out;
+  justify-content:center;
   box-shadow: 1px 1px 2px -1px lighten($primaryColor, 10%);
-  overflow-y: auto;
-  @include custom-scroll-bar($bg: $primaryColor);
+  z-index:10000;
+  
 }
 
-#side-nav-left {
-  background: linear-gradient(
-    0deg,
-    $secondaryColor,
-    lighten($secondaryColor, 2%),
-    $secondaryColor
-  );
-  position: relative;
-  width: 50px;
-  height: 100%;
-  display: inline;
-  & > .side-nav-arrow {
-    margin: 25px 10px 0;
-    color: $fgDefault;
+.nav-link{
+  height:100%;
+  width:70%;
+  display: flex;
+  justify-content:flex-start;
+  align-items:center;
+  padding-bottom:5px;
+  background:darken($color-primary, 50%);   
+  a{
+     color:$fgDefault;
+   }
+ 
+  .nav-link-icon{
+    margin: 0px 20px;
+    font-size:2rem;
   }
 
-  & > .social-link-wrapper {
-    position: absolute;
-    bottom: 50px;
-    width: 100%;
-    
-       .icon {
-        font-size: 8rem;
-      }
 
-    & > .social-links {
-      width: 100%;
-      height: 45px;
-      margin-bottom: 2px;
-      color: $fgDefault;
-      display: flex;
-      align-items: center;
-      padding-left: 10px;
-
-   
-
-      
-      &:hover {
-        background-color: lighten($secondaryColor, 20%);
-      }
-    }
-  }
 }
 
-#side-nav-right {
-  position: absolute;
-  width: calc(100% - 50px);
-  height: 100%;
-  margin-left: 50px;
-  padding: 60px;
 
-  .side-nav-link {
-    @include button();
-    display: flex;
-    height: 70px;
-    width: 100%;
-    margin-bottom: 20px;
-    color: $tertiaryColor;
-    span {
-      color: inherit;
-      margin: 10px;
-    }
-  }
+
+
+#nav-social_links {
+   display:none;
 }
 
-@keyframes move-up {
-  0% {
-    opacity: 0;
-    height: calc(100% - 200px);
-  }
-  100% {
-    opacity: 1;
-    height: calc(100% - 50px);
-  }
-}
 
 @media screen and (min-width: $smScreen) {
   #side-nav {
-    width: 340px;
+    position:sticky;
+    top:0px;
+    width: 70px;
+    height:100vh;
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    background: linear-gradient(
+      0deg,
+      $secondaryColor,
+      lighten($secondaryColor, 2%),
+      $secondaryColor
+    );
+  
+    box-shadow: 1px 1px 2px -1px lighten($primaryColor, 10%);
+  
+}
+
+  .nav-link{
+    height:70%;
+    width:100%;
+    display: flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+    padding-top:40px;
+    background:none;
+    
+    a{
+       color:$fgDefault;
+     }
+   
+    .nav-link-icon{
+      margin: 20px 0px;
+      font-size:2rem;
+    }
+  
+  
+}
+
+
+
+
+#nav-social_links {
+  position: relative;
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction:column;
+  justify-content:space-between;
+  align-items:center;
+  padding-bottom:40px;
+  
+  
+  .social-link-icon{
+    font-size:1.5rem;
+  }
+
+  .social-links{
+    display: flex;
+    flex-direction:column;
+    height:70px;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    
+    &:hover {
+      background-color: lighten($secondaryColor, 20%);
+    }
   }
 }
+}
+
+

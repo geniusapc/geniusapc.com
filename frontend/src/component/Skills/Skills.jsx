@@ -7,11 +7,11 @@ export default function Skills() {
   return (
     <section id="skills">
       <h1>SKILLS</h1>
-      <div className={"skills"}>
+      <div id={"skills-container"}>
         <Technologies stacks={stacks.backend} title={"Backend"} />
         <Technologies
           stacks={stacks.frontend}
-          title={"Front-end Development"}
+          title={"Frontend"}
         />
         <Technologies stacks={stacks.devops} title={"DevOps"} />
       </div>

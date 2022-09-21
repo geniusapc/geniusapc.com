@@ -1,125 +1,154 @@
-// @import "../../sass/color";
-// @import "../../sass/constants";
-// @import "../../sass/mixin";
+@import "../../sass/color";
+@import "../../sass/constants";
+@import "../../sass/mixin";
 
-// #contact {
+#contact {
+    width: 100%;
+    display: flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    column-gap: 5rem;
+    
   
-//   display: flex;
-//   flex-wrap: wrap;
-//   height: 100%;
-//   width: 100%;
-//   color: $black;
-//   line-height: 1.7;
-//   padding: 20px 15px;
+    & >  :first-child {
+        width: 100%;
+    }
 
-//   #contact-us {
+    & > :not(:first-child) {
+            width:100%;
+    }
+    
+    
+    
+    article {
+      color: $fgDefault;
+      font-size: 1.5rem;
+    
+      & > .social-link-wrapper {
+        margin-left: 30px;
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        font-size: 10px;
+        
+
+        & a:hover > span {
+          color: $tertiaryColor;
+        }
+           &  :hover{
+             background:red;
+         
+        }
+
+        & .social-link-logo {
+          color: $tertiaryColor;
+        }
+
+        & .social-link-name {
+          font-size: 10px;
+          margin-left: 10px;
+          color: $fgDefault;
+        }
+      }
+    }
+    
+      
+      #contact-social-links{
+        margin-top:20px;
+        display:flex;
+        width:200px;
+        flex-direction:column;
+        font-size: 1rem;
+        row-gap: 20px;
+        
+        &  :hover{
+            color:$color-primary;
+            & .social-link-icon{
+              color:$color-primary;
+              transform:scale(1.1);
+            }
+        }
+        
+     
+        & .social-link-icon{
+          font-size: 1.5rem;
+          color:white;
+        }
+     
+      }
+    
+    #contact-form-container{
+      padding: 0 5rem;
+      display:flex;
+      justify-content:center;
+    
+    }
   
-//     padding: 2rem;
-//     flex: 1.5;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     animation: display 3s ease-in-out;
+    
+  form {
+    
+    animation: pop-out 1s ease-in-out, display 2s ease-in-out;
+    background: $secondaryColor;
+    
+    height: 380px;
+    width:350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
 
-//     & > section {
-//       width: 100%;
-//       h2 {
-//         padding-bottom: 1rem;
-//         font-size: 1.5rem;
-//         text-transform: uppercase;
-//         color: $fgDefault;
-//         line-height: 1.4;
-//         font-size: 50px;
-//         text-transform: uppercase;
-//       }
+    input {
+      height: 30px;
+      width:100%;
+      margin-bottom: 30px;
+    }
 
-//       article {
-//         color: $fgDefault;
-//         font-size: 1.2rem;
-//         & > .social-link-wrapper {
-//           margin-left: 30px;
-//           margin-top: 15px;
-//           display: flex;
-//           flex-direction: column;
-//           font-size: 10px;
-//           a {
-//             color: $fgDefault;
-//             &:visited {
-//               color: $fgDefault;
-//             }
-//             margin-bottom: 10px;
-//           }
+    input[type="submit"] {
+      @include button();
+      width: 100%;
+    }
 
-//           & a:hover > span {
-//             color: $tertiaryColor;
-//           }
+    textarea {
+      width: 100%;
+      height: 80px;
+      margin-bottom: 30px;
+    }
+}
 
-//           & .social-link-logo {
-//             color: $tertiaryColor;
-//           }
+}
 
-//           & .social-link-name {
-//             font-size: 10px;
-//             margin-left: 10px;
-//             color: $fgDefault;
-//           }
-//         }
-//       }
-//     }
-//   }
 
-//   #contact-form {
-//     flex: 2;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//   }
+@keyframes pop-out {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 
-//   form {
-//     animation: pop-out 1s ease-in-out, display 2s ease-in-out;
-//     background: $secondaryColor;
-//     width: 300px;
-//     height: 380px;
-//     padding: 10px;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     padding: 20px;
+@keyframes display {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
-//     input {
-//       height: 30px;
-//       margin-bottom: 30px;
-//     }
-
-//     input[type="submit"] {
-//       @include button();
-//       width: 100%;
-//     }
-
-//     textarea {
-//       width: 100%;
-//       height: 80px;
-//       margin-bottom: 30px;
-//     }
-//   }
-// }
-
-// @keyframes pop-out {
-//   0% {
-//     transform: scale(0.8);
-//     opacity: 0;
-//   }
-//   100% {
-//     transform: scale(1);
-//     opacity: 1;
-//   }
-// }
-
-// @keyframes display {
-//   0% {
-//     opacity: 0;
-//   }
-//   100% {
-//     opacity: 1;
-//   }
-// }
+@media screen and (min-width: $smScreen) {
+  #contact{
+      & > :not(:first-child) {
+        flex:1;
+      }
+      
+      & > form{
+        
+        
+      }
+  }
+  
+  
+}
