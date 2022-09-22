@@ -1,0 +1,29 @@
+@import "./sass/mixin.scss";
+@import "./sass/constants";
+@import "./sass/color";
+
+
+
+#main-container{
+  display: flex;
+  
+  & > :nth-child(1){
+  
+  }
+  & > :nth-child(2) {
+    width: 100% ;
+  }
+  
+  & > :nth-child(2) > *:not(:first-child){
+    padding: 20px 1rem 200px;
+  }
+  
+  
+  }
+  
+  @media screen and (min-width: $smScreen) {
+      & > :nth-child(2) > *:not(:first-child){
+        padding: 50px 100px 200px;
+      }
+    
+  }

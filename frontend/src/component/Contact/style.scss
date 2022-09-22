@@ -3,84 +3,95 @@
 @import "../../sass/mixin";
 
 #contact {
-  overflow: auto;
-  display: flex;
-  flex-wrap: wrap;
-  height: 100%;
-  width: 100%;
-  color: $black;
-  line-height: 1.7;
-  padding: 20px 15px;
-
-  #contact-us {
-    font-family: "Space Mono", sans-serif;
-    padding: 2rem;
-    flex: 1.5;
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: display 3s ease-in-out;
+    flex-direction:row;
+    flex-wrap:wrap;
+    column-gap: 5rem;
+    
+  
+    & >  :first-child {
+        width: 100%;
+    }
 
-    & > section {
-      width: 100%;
-      h2 {
-        padding-bottom: 1rem;
-        font-size: 1.5rem;
-        text-transform: uppercase;
-        color: $fgDefault;
-        line-height: 1.4;
-        font-size: 50px;
-        text-transform: uppercase;
-      }
+    & > :not(:first-child) {
+            width:100%;
+    }
+    
+    
+    
+    article {
+      color: $fgDefault;
+      font-size: 1.5rem;
+    
+      & > .social-link-wrapper {
+        margin-left: 30px;
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        font-size: 10px;
+        
 
-      article {
-        color: $fgDefault;
-        font-size: 1.2rem;
-        & > .social-link-wrapper {
-          margin-left: 30px;
-          margin-top: 15px;
-          display: flex;
-          flex-direction: column;
+        & a:hover > span {
+          color: $tertiaryColor;
+        }
+           &  :hover{
+             background:red;
+         
+        }
+
+        & .social-link-logo {
+          color: $tertiaryColor;
+        }
+
+        & .social-link-name {
           font-size: 10px;
-          a {
-            color: $fgDefault;
-            &:visited {
-              color: $fgDefault;
-            }
-            margin-bottom: 10px;
-          }
-
-          & a:hover > span {
-            color: $tertiaryColor;
-          }
-
-          & .social-link-logo {
-            color: $tertiaryColor;
-          }
-
-          & .social-link-name {
-            font-size: 10px;
-            margin-left: 10px;
-            color: $fgDefault;
-          }
+          margin-left: 10px;
+          color: $fgDefault;
         }
       }
     }
-  }
-
-  #contact-form {
-    flex: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
+    
+      
+      #contact-social-links{
+        margin-top:20px;
+        display:flex;
+        width:200px;
+        flex-direction:column;
+        font-size: 1rem;
+        row-gap: 20px;
+        
+        &  :hover{
+            color:$color-primary;
+            & .social-link-icon{
+              color:$color-primary;
+              transform:scale(1.1);
+            }
+        }
+        
+     
+        & .social-link-icon{
+          font-size: 1.5rem;
+          color:white;
+        }
+     
+      }
+    
+    #contact-form-container{
+      padding: 0 5rem;
+      display:flex;
+      justify-content:center;
+    
+    }
+  
+    
   form {
+    
     animation: pop-out 1s ease-in-out, display 2s ease-in-out;
     background: $secondaryColor;
-    width: 300px;
+    
     height: 380px;
-    padding: 10px;
+    width:350px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -88,6 +99,7 @@
 
     input {
       height: 30px;
+      width:100%;
       margin-bottom: 30px;
     }
 
@@ -101,8 +113,10 @@
       height: 80px;
       margin-bottom: 30px;
     }
-  }
 }
+
+}
+
 
 @keyframes pop-out {
   0% {
@@ -122,4 +136,19 @@
   100% {
     opacity: 1;
   }
+}
+
+@media screen and (min-width: $smScreen) {
+  #contact{
+      & > :not(:first-child) {
+        flex:1;
+      }
+      
+      & > form{
+        
+        
+      }
+  }
+  
+  
 }

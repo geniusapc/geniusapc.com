@@ -27,6 +27,41 @@
     transition: all 0.2s ease-in-out;
   }
 }
+#social-link-wrapper{
+
+  margin-right:50px;
+  width:200px;
+  height:100%;
+  display:flex;
+  justify-content:space-between;
+  
+        .icon {
+        font-size: 1.5rem;
+        color: $color-primary;
+      }
+
+  align-items:center;
+     & > .social-links {
+      width: 100%;
+      height: 45px;
+      margin-bottom: 2px;
+      color: $fgDefault;
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+
+
+      & span:before {
+        content: "";
+        margin-left: 1.1rem;
+      }
+
+      &:hover {
+        background-color: lighten($secondaryColor, 20%);
+      }
+       
+     }
+}
 
 @keyframes bounce {
   0% {

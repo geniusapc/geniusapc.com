@@ -1,11 +1,10 @@
 @import "../../sass/mixin";
 @import "../../sass/color";
 
-#home {
+#intro {
   display: flex;
   justify-content: space-between;
   height: 100vh;
-  width: 100%;
   padding-top: 50px;
   background: $color-bg;
 
@@ -63,72 +62,6 @@
   }
 }
 
-@media screen and (min-width: $smScreen) {
-  #home {
-    #binary-fall {
-      opacity: 0.08;
-    }
-    #bash-section {
-      width: 80%;
-    }
-    #command-wrapper {
-      width: 50% !important;
-      height: 250px;
-      animation: movecommandWrapper 2s ease-in, fadeOut 1s ease-in-out;
-    }
-    .folders {
-      width: 20%;
-      height: 70%;
-      margin: 20px;
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-    }
-  }
-  .skills {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    row-gap: 2rem;
-    column-gap: 2rem;
-    justify-items: center;
-  }
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes movecommandWrapper {
-  0% {
-    top: -20px;
-    right: -50px;
-  }
-  80% {
-    top: 15px;
-    right: 50px;
-  }
-}
-
-@keyframes movecommandWrapperSm {
-  0% {
-    top: -20px;
-    right: -20px;
-  }
-  80% {
-    top: 2px;
-    right: 2px;
-  }
-}
-
-
-
-
 #command-wrapper {
   position: relative;
   width: 20px;
@@ -161,5 +94,62 @@
       color: $fgDefault;
       margin-left: 0.2em;
     }
+  }
+}
+
+
+@media screen and (min-width: $smScreen) {
+  #intro {
+    
+    #binary-fall {
+      opacity: 0.08;
+    }
+    #bash-section {
+      width: 80%;
+    }
+    #command-wrapper {
+      width: 50% !important;
+      height: 250px;
+      animation: movecommandWrapper 2s ease-in, fadeOut 1s ease-in-out;
+    }
+    .folders {
+      width: 20%;
+      height: 70%;
+      margin: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes movecommandWrapper {
+  0% {
+    top: -20px;
+    right: -50px;
+  }
+  80% {
+    top: 15px;
+    right: 50px;
+  }
+}
+
+@keyframes movecommandWrapperSm {
+  0% {
+    top: -20px;
+    right: -20px;
+  }
+  80% {
+    top: 2px;
+    right: 2px;
   }
 }
