@@ -9,84 +9,75 @@
   width:100vw;
   display: flex;
   justify-content:center;
-  box-shadow: 1px 1px 2px -1px lighten($primaryColor, 10%);
+  box-shadow: 1px 1px 2px -1px lighten($color-bg-variant, 10%);
   z-index:10000;
+  background:darken($color-primary, 50%); 
+  
+   & .nav-link{
+    height:100%;
+    width:70%;
+
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    & :hover{
+          transform: scale(1.05);
+    }
+      
+    & a{
+       color:$fgDefault;
+     }
+ 
+    & .nav-link-icon{
+      margin: 0px 20px;
+      font-size: 1.7em;
+    }
+  }
+
+  &  #nav-social_links {
+     display:none;
+  }
   
 }
 
-.nav-link{
-  height:100%;
-  width:70%;
-  display: flex;
-  justify-content:flex-start;
-  align-items:center;
-  padding-bottom:5px;
-  background:darken($color-primary, 50%);   
-  a{
-     color:$fgDefault;
-   }
- 
-  .nav-link-icon{
-    margin: 0px 20px;
-    font-size:2rem;
-  }
-
-
-}
-
-
-
-
-#nav-social_links {
-   display:none;
-}
 
 
 @media screen and (min-width: $smScreen) {
   #side-nav {
     position:sticky;
     top:0px;
-    width: 70px;
+    width: 4em;
     height:100vh;
     display: flex;
     flex-direction:column;
     justify-content:center;
-    background: linear-gradient(
-      0deg,
-      $secondaryColor,
-      lighten($secondaryColor, 2%),
-      $secondaryColor
-    );
-  
-    box-shadow: 1px 1px 2px -1px lighten($primaryColor, 10%);
-  
-}
-
-  .nav-link{
-    height:70%;
-    width:100%;
-    display: flex;
-    flex-direction:column;
-    justify-content:flex-start;
-    align-items:center;
-    padding-top:40px;
-    background:none;
+    background: $color-bg-variant;
+    box-shadow: 1px 1px 2px -1px lighten($color-bg-variant, 10%);
     
-    a{
-       color:$fgDefault;
-     }
-   
-    .nav-link-icon{
-      margin: 20px 0px;
-      font-size:2rem;
-    }
+    
+      .nav-link{
+        height:70%;
+        width:100%;
+        display: flex;
+        flex-direction:column;
+        justify-content:flex-start;
+        align-items:center;
+        padding-top:40px;
+        background:none;
+        
+        a{
+          color:$fgDefault;
+        }
+       
+        .nav-link-icon{
+          margin: 20px 0px;
+          font-size: 1.5em;
+        }
+      
   
-  
-}
-
-
-
-
+      }
+      
+      
 #nav-social_links {
   position: relative;
   width: 100%;
@@ -111,10 +102,15 @@
     width:100%;
     
     &:hover {
-      background-color: lighten($secondaryColor, 20%);
+      background-color: lighten($color-bg-variant, 20%);
     }
   }
 }
+
+  }
 }
+
+
+
 
 

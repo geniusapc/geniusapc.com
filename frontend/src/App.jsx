@@ -10,7 +10,7 @@ const App = () => {
   return (
     <main id="main-container">
       <Nav />
-      <div>
+      <div style={{ overflow: "hidden" }}>
         <Intro />
         <Skills />
         <Contact />
