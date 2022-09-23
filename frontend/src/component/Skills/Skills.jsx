@@ -9,10 +9,7 @@ export default function Skills() {
       <h1>SKILLS</h1>
       <div id={"skills-container"}>
         <Technologies stacks={stacks.backend} title={"Backend"} />
-        <Technologies
-          stacks={stacks.frontend}
-          title={"Frontend"}
-        />
+        <Technologies stacks={stacks.frontend} title={"Frontend"} />
         <Technologies stacks={stacks.devops} title={"DevOps"} />
       </div>
     </section>

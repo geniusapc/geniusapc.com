@@ -1,10 +1,7 @@
 import {
-  faArrowLeft,
   faHome,
   faIdCard,
   faPhoneVolume,
-  faMicrochip,
-  faHandPointLeft,
 } from "@fortawesome/free-solid-svg-icons"; 
  
   const links = [

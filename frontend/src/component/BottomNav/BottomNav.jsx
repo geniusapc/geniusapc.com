@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import "./style.scss";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faMicrochip,
   faHandPointLeft,
   faHome,
   faIdCard,
