@@ -21,7 +21,6 @@ body {
   position: relative;
   font-family: "Poppins", sans-serif;
   line-height: 1.7;
-  background: $color-bg-variant;
 }
 
 li,
@@ -50,10 +49,11 @@ h2 {
 
 h1 {
   font-size: 2rem;
+  font-weight:600;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-align: center;
 }
 
@@ -66,13 +66,9 @@ section > h2 {
   width: 100%;
   text-align: center;
   color: $color-primary;
-  font-weight: 500;
   margin-bottom:50px;
 }
 
-a {
+a , a :visited {
   color: $fgDefault;
-  &:visited {
-    color: $fgDefault;
-  }
 }

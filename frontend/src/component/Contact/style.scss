@@ -16,6 +16,7 @@
 
     & > :not(:first-child) {
             width:100%;
+            margin-bottom:3rem;
     }
     
     
@@ -32,17 +33,10 @@
         font-size: 10px;
         
 
-        & a:hover > span {
-          color: $tertiaryColor;
-        }
-           &  :hover{
-             background:red;
-         
-        }
+      
+      
 
-        & .social-link-logo {
-          color: $tertiaryColor;
-        }
+ 
 
         & .social-link-name {
           font-size: 10px;
@@ -56,21 +50,32 @@
       #contact-social-links{
         margin-top:20px;
         display:flex;
-        width:200px;
-        flex-direction:column;
+        flex-direction:row;
+        row-gap:2rem;
+       column-gap:2rem;
+       align-items:center;
+        width:100%;
+      
+            
+                 & .social-link-icon{
+              color:$color-primary!important;
+              
+            }
+    
+        
         font-size: 1rem;
-        row-gap: 20px;
+       
         
         &  :hover{
-            color:$color-primary;
             & .social-link-icon{
-              color:$color-primary;
+              color:$fgDefault !important;
               transform:scale(1.1);
             }
         }
         
      
         & .social-link-icon{
+          
           font-size: 1.5rem;
           color:white;
         }
@@ -78,24 +83,23 @@
       }
     
     #contact-form-container{
-      padding: 0 5rem;
       display:flex;
       justify-content:center;
-    
     }
   
     
   form {
     
     animation: pop-out 1s ease-in-out, display 2s ease-in-out;
-    background: $secondaryColor;
+    background: lighten($color-bg, 10%);
+    
     
     height: 380px;
     width:350px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+  
 
     input {
       height: 30px;
@@ -144,11 +148,17 @@
         flex:1;
       }
       
-      & > form{
-        
-        
-      }
+      &  form{
+      padding: 5rem !important;
+      margin:0px 50px !important;
+      
+    }
+      
+
   }
+  
+    
+    
   
   
 }

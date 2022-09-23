@@ -37,14 +37,14 @@
   align-items: center;
   justify-content: center;
   color: $fgDefault;
-  background: $secondaryColor;
+  background: $color-bg-variant;
   border-radius: $radius;
   padding: 3px 5px;
-  border: 1px solid $tertiaryColor;
+  border: 1px solid $borderColor;
   &:hover {
     transition: all 0.2s ease-in;
     transform: scale(1.03);
-    background-color: lighten($primaryColor, 10%);
+    background-color: lighten($color-bg-variant, 10%);
   }
 }
 
@@ -55,7 +55,7 @@
     & div {
       border: 1px solid $borderColor;
       box-shadow: $box-shadow;
-      background-color: $tertiaryColor;
+      background-color: $color-bg-variant;
       margin-right: 5px;
       @include round($size);
     }
@@ -71,31 +71,31 @@
   }
 }
 
-@mixin search-input($width: 250px, $height: 20px) {
-  margin-left: 10px;
-  padding-left: 10px;
-  width: $width;
-  height: $height;
-  border-radius: 10px;
-  border: 0px;
-  color: $tertiaryColor;
-  outline: none;
-  font-size: 8px;
-}
+// @mixin search-input($width: 250px, $height: 20px) {
+//   margin-left: 10px;
+//   padding-left: 10px;
+//   width: $width;
+//   height: $height;
+//   border-radius: 10px;
+//   border: 0px;
+//   color: $tertiaryColor;
+//   outline: none;
+//   font-size: 8px;
+// }
 
-@mixin custom-scroll-bar($bg: #999) {
-  &::-webkit-scrollbar {
-    border-radius: 5px;
-    height: 5px;
-    width: 5px;
-  }
+// @mixin custom-scroll-bar($bg: #999) {
+//   &::-webkit-scrollbar {
+//     border-radius: 5px;
+//     height: 5px;
+//     width: 5px;
+//   }
 
-  &::-webkit-scrollbar-thumb {
-    background: $bg;
-    border-radius: 5px;
-  }
+//   &::-webkit-scrollbar-thumb {
+//     background: $bg;
+//     border-radius: 5px;
+//   }
 
-  &::-webkit-scrollbar-track {
-    border-radius: 5px;
-  }
-}
+//   &::-webkit-scrollbar-track {
+//     border-radius: 5px;
+//   }
+// }
