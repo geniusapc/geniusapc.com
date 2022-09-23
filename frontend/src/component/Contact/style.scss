@@ -16,6 +16,7 @@
 
     & > :not(:first-child) {
             width:100%;
+            margin-bottom:3rem;
     }
     
     
@@ -33,10 +34,7 @@
         
 
       
-           &  :hover{
-             background:red;
-         
-        }
+      
 
  
 
@@ -52,21 +50,32 @@
       #contact-social-links{
         margin-top:20px;
         display:flex;
-        width:200px;
-        flex-direction:column;
+        flex-direction:row;
+        row-gap:2rem;
+       column-gap:2rem;
+       align-items:center;
+        width:100%;
+      
+            
+                 & .social-link-icon{
+              color:$color-primary!important;
+              
+            }
+    
+        
         font-size: 1rem;
-        row-gap: 20px;
+       
         
         &  :hover{
-            color:$color-primary;
             & .social-link-icon{
-              color:$color-primary;
+              color:$fgDefault !important;
               transform:scale(1.1);
             }
         }
         
      
         & .social-link-icon{
+          
           font-size: 1.5rem;
           color:white;
         }

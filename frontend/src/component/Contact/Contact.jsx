@@ -35,15 +35,12 @@ const Contact = () => {
         <div id="contact-social-links">
           <a href={linkedIn.link} className="social-links">
             <FontAwesomeIcon className="social-link-icon" icon={faLinkedin} />{" "}
-            {linkedIn.name}
           </a>
           <a href={github.link} className="social-links">
             <FontAwesomeIcon className="social-link-icon" icon={faGithub} />{" "}
-            {github.name}
           </a>
           <a href={twitter.link} className="social-links">
             <FontAwesomeIcon className="social-link-icon" icon={faTwitter} />{" "}
-            {twitter.name}
           </a>
         </div>
       </article>
