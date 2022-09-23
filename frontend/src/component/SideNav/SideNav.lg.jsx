@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./style.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import links from "./Links";
@@ -7,13 +6,12 @@ import {
   faLinkedin,
   faGithub,
   faTwitter,
-  faFacebook,
 } from "@fortawesome/free-brands-svg-icons";
 
 import { aboutMe } from "../../service";
 
 export default function SideNav() {
-  const { linkedIn, github, twitter, facebook } = aboutMe.socailLinks;
+  const { linkedIn, github, twitter } = aboutMe.socailLinks;
 
   return (
     <aside id="side-nav">

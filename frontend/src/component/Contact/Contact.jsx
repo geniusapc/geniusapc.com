@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./style.scss";
-import SocialLinks from "../../component/SocialLink/SocialLink";
 // import axios from "axios"
 import { toast } from "react-toastify";
 import { aboutMe } from "../../service";
@@ -10,14 +9,13 @@ import {
   faLinkedin,
   faGithub,
   faTwitter,
-  faFacebook,
 } from "@fortawesome/free-brands-svg-icons";
 
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const { linkedIn, github, twitter, facebook } = aboutMe.socailLinks;
+  const { linkedIn, github, twitter } = aboutMe.socailLinks;
   const sendMessage = async (e) => {
     e.preventDefault();
     try {
@@ -36,43 +34,45 @@ const Contact = () => {
         contact me on social media or complete the following form.{" "}
         <div id="contact-social-links">
           <a href={linkedIn.link} className="social-links">
-            <FontAwesomeIcon className="social-link-icon" icon={faLinkedin} /> {linkedIn.name}
+            <FontAwesomeIcon className="social-link-icon" icon={faLinkedin} />{" "}
+            {linkedIn.name}
           </a>
           <a href={github.link} className="social-links">
-            <FontAwesomeIcon className="social-link-icon" icon={faGithub} /> {github.name}
+            <FontAwesomeIcon className="social-link-icon" icon={faGithub} />{" "}
+            {github.name}
           </a>
           <a href={twitter.link} className="social-links">
-            <FontAwesomeIcon className="social-link-icon" icon={faTwitter} /> {twitter.name}
+            <FontAwesomeIcon className="social-link-icon" icon={faTwitter} />{" "}
+            {twitter.name}
           </a>
         </div>
       </article>
 
       <div id="contact-form-container">
-       <form id="contact-form" onSubmit={sendMessage}>
-        <input
-          className="default-input-form"
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Your Name *"
-        />
-        <input
-          className="default-input-form"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email Address *"
-        />
-        <textarea
-          className="default-input-form"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          placeholder="Message *"
-        />
-        <input type="submit" value="Send Message" disabled/>
-      </form> 
+        <form id="contact-form" onSubmit={sendMessage}>
+          <input
+            className="default-input-form"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Your Name *"
+          />
+          <input
+            className="default-input-form"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email Address *"
+          />
+          <textarea
+            className="default-input-form"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder="Message *"
+          />
+          <input type="submit" value="Send Message" disabled />
+        </form>
       </div>
-     
     </section>
   );
 };
