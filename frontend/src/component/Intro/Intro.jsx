@@ -7,7 +7,7 @@ import { faFolderOpen } from "@fortawesome/free-solid-svg-icons";
 import binaryFall from "./binaryFall";
 
 const folders = [
-  { id: 1, name: "About", tagId: "technology-folder", link: "#About" },
+  { id: 1, name: "About", tagId: "technology-folder", link: "#about" },
   { id: 2, name: "Contact", tagId: "Contact-folder", link: "#contact" },
   { id: 3, name: "Projects", tagId: "Projects-folder", link: "#projects" },
   {
@@ -28,15 +28,16 @@ export default function Home() {
     <div id="intro">
       <div className="folders">
         {folders.map((e) => (
-          <Link className="folder-wrapper" to={e.link} key={e.id} id={e.tagId}>
+          <a className="folder-wrapper" href={e.link} key={e.id} id={e.tagId}>
             <FontAwesomeIcon
               className="folder"
               transform={{ rotate: 270 }}
               flip="horizontal"
               icon={faFolderOpen}
             />
+
             <div className="folderName">{e.name}</div>
-          </Link>
+          </a>
         ))}
       </div>
       <canvas id="binary-fall"></canvas>
