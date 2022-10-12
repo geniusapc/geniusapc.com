@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import "./style.scss";
-import Bash from "./Bash";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFolderOpen } from "@fortawesome/free-solid-svg-icons";
+import "./style.scss";
+import Bash from "./Bash";
 import binaryFall from "./binaryFall";
 
 const folders = [
