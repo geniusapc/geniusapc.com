@@ -35,9 +35,7 @@ ul li {
 p,
 li,
 span,
-label,
-input,
-textarea {
+label {
   color: $fgDefault;
 }
 
@@ -69,6 +67,6 @@ section > h2 {
   margin-bottom:50px;
 }
 
-a , a :visited {
+a, a:visited {
   color: $fgDefault;
 }

@@ -138,4 +138,9 @@ const aboutMe = {
   hobby: ["Playing Chess", "Swimming"],
 };
 
-export { courseCompletion, stacks, aboutMe };
+
+const contactMe = {
+  text: `Thanks for your interest. If you'd like to get in touch with me, please
+        contact me on social media or complete the following form.`
+}
+export { courseCompletion, stacks, aboutMe , contactMe};

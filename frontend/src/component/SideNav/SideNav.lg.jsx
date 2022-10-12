@@ -17,7 +17,7 @@ export default function SideNav() {
     <aside id="side-nav">
       <div className="nav-link">
         {links.map((e) => (
-          <a href={e.link}>
+          <a href={e.link} key={e.link} >
             <FontAwesomeIcon
               className="nav-link-icon"
               size="2x"
