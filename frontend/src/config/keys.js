@@ -1,3 +1,0 @@
-const SERVER_BASEURL = process.env.REACT_APP_SERVER_BASEURL;
-
-export { SERVER_BASEURL };
