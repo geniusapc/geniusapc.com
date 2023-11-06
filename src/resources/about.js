@@ -3,7 +3,7 @@ const aboutMe = {
   username: 'Geniusapc',
   location: 'Lagos, Nigeria',
   website: 'https://geniusapc.com',
-  role: 'FullStack Developer',
+  role: 'Software Developer',
   socailLinks: {
     linkedIn: {
       name: 'LinkedIn',
@@ -19,9 +19,7 @@ const aboutMe = {
     },
   },
 
-  details: `Geniusapc is a fullstack developer with hands-on 
-                experience building web applications that are secured, 
-                scalable and high performing.`,
+
 };
 
 export default aboutMe;
