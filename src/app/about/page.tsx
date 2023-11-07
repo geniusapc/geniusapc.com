@@ -9,6 +9,7 @@ import { Tabs } from '@/component/About/enums';
 import TopBorder from '@/component/Border/TopBorder';
 import Skills from '@/component/About/Skills';
 import Profile from '@/component/About/Profile';
+import Certification from '@/component/About/CertOfCompletion';
 
 export default function Page() {
     const searchParams = useSearchParams();
@@ -46,7 +47,7 @@ const tabs: TabMap = {
         name: 'about',
         title: 'about.html',
         icon: faHtml5,
-        href: 'about',
+        tab: 'about',
         Component: AboutTags,
     },
     [Tabs.skills]: {
@@ -54,15 +55,15 @@ const tabs: TabMap = {
         name: 'skills',
         title: 'skills.ts',
         icon: faJs,
-        href: 'skills',
+        tab: 'skills',
         Component: Skills,
     },
-    [Tabs.technologies]: {
-        id: Tabs.technologies,
-        name: 'technologies',
-        title: 'technologies.css',
+    [Tabs.certifications]: {
+        id: Tabs.certifications,
+        name: 'Certifications',
+        title: 'certifications.md',
         icon: faHtml5,
-        href: 'technologies',
-        Component: AboutTags,
+        tab: 'certifications',
+        Component: Certification,
     },
 };

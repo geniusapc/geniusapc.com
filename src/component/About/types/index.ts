@@ -12,7 +12,7 @@ export type Tab = {
   name: string;
   title: string;
   icon: IconProp;
-  href: string;
+  tab: string;
   Component: () => React.JSX.Element;
 };
 
