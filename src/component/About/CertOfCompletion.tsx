@@ -11,7 +11,7 @@ interface Icert {
 const CertOfCompletion = ({ certs, certProvider }: { certs: Icert[]; certProvider: string }) => {
     return (
         <div>
-            <div className="text-blue200 text-right mb-4 text-sm mt-8 ">{certProvider}</div>
+            <div className="text-blue200 text-center md:text-right mb-4 text-sm mt-8 ">{certProvider}</div>
             <div className='grid grid-cols-2 gap-3'>
                 {certs.map((item) => (
                     <a key={item.name} className='cursor-pointer' href={item.link}>
@@ -47,7 +47,7 @@ const Certification = () => {
     return (
         <>
 
-            <h2 className="text-right underline decoration-wavy underline-offset-4 text-gray400  mb-6"> Certification</h2>
+            <h2 className="text-center md:text-right underline decoration-wavy underline-offset-4 text-gray400  mb-6"> Certification</h2>
             <div className="grid grid-cols-2 gap-8">
                 {certifications.majorCert.map((cert) => (
                     <CertWithExternalLink
@@ -59,7 +59,7 @@ const Certification = () => {
                 ))}
             </div>
 
-            <h2 className="text-right underline  decoration-wavy  underline-offset-4 mt-12 text-gray400  mb-6"> Certificate of Completion </h2>
+            <h2 className="text-center md:text-right underline  decoration-wavy  underline-offset-4 mt-12 text-gray400  mb-6"> Certificate of Completion </h2>
 
             <CertOfCompletion
                 certProvider={'AWS Skill Builder'}
