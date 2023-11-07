@@ -31,15 +31,15 @@ export default function SideBar() {
         ))}
       </div>
       <section className="hidden md:flex flex-col space-y-8  text-xl">
-        <Link href={linkedIn.link}>
+        <a href={linkedIn.link} target="_blank">
           <FontAwesomeIcon icon={faLinkedin} />
-        </Link>
-        <Link href={github.link}>
+        </a>
+        <a href={github.link} target="_blank">
           <FontAwesomeIcon icon={faGithub} />
-        </Link>
-        <Link href={twitter.link}>
+        </a>
+        <a href={twitter.link} target="_blank">
           <FontAwesomeIcon icon={faTwitter} />
-        </Link>
+        </a>
       </section>
     </aside>
   );

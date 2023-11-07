@@ -17,7 +17,7 @@ const NavTabitem = ({ tab, selectedTab }: { tab: Tab; selectedTab?: Tab }) => {
     <div
       onClick={() => handleoOnClick(tab?.href)}
       key={tab.id}
-      className={` flex items-center space-x-2 h-full px-4 border-r-[1px] border-gray300 ${selectedClass}`}
+      className={` flex items-center space-x-2 h-full px-4 border-r-[1px] border-gray300  cursor-pointer ${selectedClass}`}
     >
       <FontAwesomeIcon icon={tab.icon} />
       <span>{tab.title}</span>

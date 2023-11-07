@@ -8,17 +8,57 @@ import { Tab, TabMap } from "@/component/About/types";
 import { Tabs } from "@/component/About/enums";
 import TopBorder from "@/component/Border/TopBorder";
 import Image from "next/image";
+import { about } from "@/resources"
+import DefaultBtn from "@/component/Buttons/DefaultButton";
 
-const DefaultBtn = ({
-    Text,
-}: { Text: string } & React.DetailedHTMLProps<
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
->) => (
-    <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold text-xs py-1 px-2 rounded inline-flex items-center">
-        {Text}
-    </button>
-);
+
+
+export default function Page() {
+    const searchParams = useSearchParams();
+    const defaultTab = Tabs[Tabs.about];
+    const [currentTab, setCurrentTab] = useState<Tab>();
+
+    const tab = searchParams.get("tab") || defaultTab;
+
+    useEffect(() => {
+        const curentTab = tab in Tabs ? tab : defaultTab;
+        setCurrentTab(tabs[Tabs[curentTab as keyof typeof Tabs]]);
+    }, [tab, defaultTab]);
+
+    const goToExternalLink = (url: string, target = "_blank") => window.open(url, target)
+
+    const { linkedIn, twitter } = about.socailLinks
+
+    return (
+        <main className="flex flex-col md:flex-row  h-full  md:justify-between  overflow-hidden md:pl-12 md:pt-12 select-none">
+            <div className="bg-gray100 w-full h-full mb-12">
+                <TopBorder />
+                <AboutNav selectedTab={currentTab} tabs={tabs} />
+                <section className="p-1 md:p-4 h-full  w-full pb-20 flex ">
+                    <div className="w-full lg:w-3/5  border-gray300 border-r-[1px] p-4 pb-24 overflow-y-scroll ">
+                        {currentTab?.Component?.()}
+                    </div>
+                    <div className="hidden w-2/5 h-full p-4  gap-8 lg:flex flex-col items-center justify-center">
+                        <div className="w-60 mx-auto ">
+                            <Image
+                                src="/img/profile.jpg"
+                                className="rounded-2xl"
+                                alt="Prince Arthur"
+                                width={240}
+                                height={240}
+                            />
+                        </div>
+                        <div className="flex gap-4 w-full justify-center">
+                            <DefaultBtn Text={linkedIn.name} onClick={() => goToExternalLink(linkedIn.link)} />
+                            <DefaultBtn Text={twitter.name} onClick={() => goToExternalLink(twitter.link)} />
+                            <DefaultBtn Text="Email" onClick={() => goToExternalLink(`mailto: ${about.email}`, "_self")} />
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    );
+}
 
 const tabs: TabMap = {
     [Tabs.about]: {
@@ -46,47 +86,3 @@ const tabs: TabMap = {
         Component: AboutTags,
     },
 };
-
-export default function Page() {
-    const searchParams = useSearchParams();
-    const defaultTab = Tabs[Tabs.about];
-    const [currentTab, setCurrentTab] = useState<Tab>();
-
-    const tab = searchParams.get("tab") || defaultTab;
-
-    useEffect(() => {
-        const curentTab = tab in Tabs ? tab : defaultTab;
-        setCurrentTab(tabs[Tabs[curentTab as keyof typeof Tabs]]);
-    }, [tab, defaultTab]);
-
-    return (
-        <main className="flex flex-col md:flex-row  h-full  md:justify-between  overflow-hidden md:pl-12 md:pt-12 select-none">
-            <div className="bg-gray100 w-full h-full mb-12">
-                <TopBorder />
-                <AboutNav selectedTab={currentTab} tabs={tabs} />
-                <section className="p-1 md:p-4 h-full  w-full pb-20 flex ">
-                    <div className="w-full lg:w-3/5  border-gray300 border-r-[1px] p-4 pb-24 overflow-y-scroll ">
-                        {currentTab?.Component?.()}
-                    </div>
-
-                    <div className="hidden w-2/5 h-full p-4  gap-8 lg:flex flex-col items-center justify-center">
-                        <div className="w-60 mx-auto ">
-                            <Image
-                                src="/img/profile.jpg"
-                                className="rounded-2xl"
-                                alt="Prince Arthur"
-                                width={240}
-                                height={240}
-                            />
-                        </div>
-                        <div className="flex gap-4 w-full justify-center">
-                            <DefaultBtn Text="Linkedin" />
-                            <DefaultBtn Text="Twitter" />
-                            <DefaultBtn Text="Email" />
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </main>
-    );
-}
