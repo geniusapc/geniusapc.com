@@ -1,10 +1,6 @@
-import React from 'react';
-
-import { about } from '../../resources';
-import Typewriter from './Typewriter';
-import TopBorder from '../Border/TopBorder';
-
-
+import React from "react";
+import Typewriter from "./Typewriter";
+import TopBorder from "../Border/TopBorder";
 
 function Terminal({ className }: { className: string }) {
     return (

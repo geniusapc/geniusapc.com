@@ -1,8 +1,16 @@
-import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faHome, faIdCard, faBriefcase } from '@fortawesome/free-solid-svg-icons';
-import { about } from '../../resources';
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLinkedin,
+  faGithub,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import {
+  faHome,
+  faIdCard,
+  faBriefcase,
+} from "@fortawesome/free-solid-svg-icons";
+import { about } from "../../resources";
 
 export default function SideBar() {
   const { linkedIn, github, twitter } = about.socailLinks;
@@ -41,20 +49,20 @@ const links = [
   {
     id: 1,
     icon: faHome,
-    name: 'Home',
-    link: '/',
+    name: "Home",
+    link: "/",
   },
   {
     id: 2,
     icon: faIdCard,
-    name: 'About',
-    link: '/about',
+    name: "About",
+    link: "/about",
   },
 
   {
     id: 3,
     icon: faBriefcase,
-    name: 'Projects',
-    link: '/projects',
+    name: "Projects",
+    link: "/projects",
   },
 ];

@@ -1,12 +1,13 @@
-'use client';
-import React, { useEffect, useState } from 'react';
-import AboutNav from '@/component/About/AboutNav';
-import AboutTags from '@/component/About/AboutTags';
-import { faHtml5, faJs } from '@fortawesome/free-brands-svg-icons';
-import { useSearchParams } from 'next/navigation';
-import { Tab, TabMap } from '@/component/About/types';
-import { Tabs } from '@/component/About/enums';
-import TopBorder from '@/component/Border/TopBorder';
+"use client";
+import React, { useEffect, useState } from "react";
+import AboutNav from "@/component/About/AboutNav";
+import AboutTags from "@/component/About/AboutTags";
+import { faHtml5, faJs } from "@fortawesome/free-brands-svg-icons";
+import { useSearchParams } from "next/navigation";
+import { Tab, TabMap } from "@/component/About/types";
+import { Tabs } from "@/component/About/enums";
+import TopBorder from "@/component/Border/TopBorder";
+import Image from "next/image";
 
 const DefaultBtn = ({
     Text,
@@ -19,31 +20,29 @@ const DefaultBtn = ({
     </button>
 );
 
-
-
 const tabs: TabMap = {
     [Tabs.about]: {
         id: Tabs.about,
-        name: 'about',
-        title: 'about.html',
+        name: "about",
+        title: "about.html",
         icon: faHtml5,
-        href: 'about',
+        href: "about",
         Component: AboutTags,
     },
     [Tabs.skills]: {
         id: Tabs.skills,
-        name: 'skills',
-        title: 'skills.js',
+        name: "skills",
+        title: "skills.js",
         icon: faJs,
-        href: 'skills',
+        href: "skills",
         Component: AboutTags,
     },
     [Tabs.technologies]: {
         id: Tabs.technologies,
-        name: 'technologies',
-        title: 'technologies.css',
+        name: "technologies",
+        title: "technologies.css",
         icon: faHtml5,
-        href: 'technologies',
+        href: "technologies",
         Component: AboutTags,
     },
 };
@@ -53,17 +52,15 @@ export default function Page() {
     const defaultTab = Tabs[Tabs.about];
     const [currentTab, setCurrentTab] = useState<Tab>();
 
-    const tab = searchParams.get('tab') || defaultTab;
+    const tab = searchParams.get("tab") || defaultTab;
 
     useEffect(() => {
         const curentTab = tab in Tabs ? tab : defaultTab;
         setCurrentTab(tabs[Tabs[curentTab as keyof typeof Tabs]]);
-    }, [tab]);
-
+    }, [tab, defaultTab]);
 
     return (
         <main className="flex flex-col md:flex-row  h-full  md:justify-between  overflow-hidden md:pl-12 md:pt-12 select-none">
-
             <div className="bg-gray100 w-full h-full mb-12">
                 <TopBorder />
                 <AboutNav selectedTab={currentTab} tabs={tabs} />
@@ -74,7 +71,13 @@ export default function Page() {
 
                     <div className="hidden w-2/5 h-full p-4  gap-8 lg:flex flex-col items-center justify-center">
                         <div className="w-60 mx-auto ">
-                            <img src="/img/profile.jpg" className="rounded-2xl" />
+                            <Image
+                                src="/img/profile.jpg"
+                                className="rounded-2xl"
+                                alt="Prince Arthur"
+                                width={240}
+                                height={240}
+                            />
                         </div>
                         <div className="flex gap-4 w-full justify-center">
                             <DefaultBtn Text="Linkedin" />
