@@ -23,7 +23,7 @@ export default function Page() {
     }, [tab, defaultTab]);
 
     return (
-        <main className="flex flex-col md:flex-row  h-full  md:justify-between  overflow-hidden md:pl-12 md:pt-12 select-none">
+        <main className="flex flex-col md:flex-row  h-full  md:justify-between  overflow-hidden md:pl-12  select-none">
             <div className="bg-gray100 w-full h-full mb-12">
                 <TopBorder />
                 <AboutNav selectedTab={currentTab} tabs={tabs} />

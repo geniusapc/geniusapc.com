@@ -22,7 +22,7 @@ function Typewriter() {
                 null
               )
               .pasteString(
-                `<br/> I am a <span style="color:#b31b2d">${about.role}</span>`,
+                `<br/> I am a <span style="color:#ed9935">${about.role}</span>`,
                 null
               )
               .pasteString(
