@@ -15,7 +15,7 @@ const NavTabitem = ({ tab, selectedTab }: { tab: Tab; selectedTab?: Tab }) => {
       : "bg-gray200 border-b-[1px]  text-gray400";
   return (
     <div
-      onClick={() => handleoOnClick(tab?.href)}
+      onClick={() => handleoOnClick(tab?.tab)}
       key={tab.id}
       className={` flex items-center space-x-2 h-full px-4 border-r-[1px] border-gray300  cursor-pointer ${selectedClass}`}
     >
