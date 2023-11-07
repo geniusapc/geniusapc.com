@@ -4,6 +4,7 @@ const aboutMe = {
   location: 'Lagos, Nigeria',
   website: 'https://geniusapc.com',
   role: 'Software Developer',
+  email: 'geniusapc@gmail.com',
   socailLinks: {
     linkedIn: {
       name: 'LinkedIn',
@@ -18,8 +19,6 @@ const aboutMe = {
       link: 'https://twitter.com/geniusapc',
     },
   },
-
-
 };
 
 export default aboutMe;

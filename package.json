@@ -11,16 +11,10 @@
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
-    "axios": "^0.24.0",
-    "babel-plugin-macros": "^3.1.0",
     "framer-motion": "^10.16.4",
     "next": "^13.5.6",
-    "node-sass": "^9.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.0.2",
-    "react-toastify": "^8.1.0",
-    "styled-components": "^6.0.0-rc.3",
     "typewriter-effect": "^2.20.1"
   },
   "scripts": {
@@ -28,12 +22,15 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write \"src/**/**/*.tsx\""
+    "format": "prettier --write \"src/**/**/*.tsx\"",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@types/react": "18.2.9",
     "autoprefixer": "^10.4.14",
     "eslint": "^7.32.0",
+    "eslint-config-next": "^14.0.1",
+    "husky": "^8.0.3",
     "postcss": "^8.4.24",
     "prettier": "^2.7.1",
     "tailwindcss": "^3.3.2",
