@@ -25,12 +25,12 @@ export default function SideBar() {
             className="tooltip flex flex-col  justify-center gap-1 md:gap-2"
             data-tooltip={e.name}
           >
-            <FontAwesomeIcon className="text-2xl md:text-3xl" icon={e.icon} />
-            <span className="block font-semibold">{e.name}</span>
+            <FontAwesomeIcon className="text-2xl" icon={e.icon} />
+            <span className="block text-sm font-semibold">{e.name}</span>
           </Link>
         ))}
       </div>
-      <section className="hidden md:flex flex-col space-y-8  text-xl">
+      <section className="hidden md:flex flex-col space-y-4  text-lg">
         <a href={linkedIn.link} target="_blank">
           <FontAwesomeIcon icon={faLinkedin} />
         </a>
