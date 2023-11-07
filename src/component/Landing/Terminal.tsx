@@ -6,7 +6,7 @@ import TopBorder from '../Border/TopBorder';
 
 
 
-function Terminal({ className }) {
+function Terminal({ className }: { className: string }) {
     return (
         <div
             className={`w-full md:w-[500px] h-[240px] md:h-[270px] bg-gray200 rounded ${className}`}
