@@ -11,7 +11,7 @@ export default function AboutNav({ selectedTab, tabs }: IAboutNav) {
     const tabList = Object.values(tabs)
     return (
         <nav>
-            <div className="bg-gray200 flex justify-between py-1 px-2 border-b-[1px] border-gray300">
+            <div className="bg-gray200 flex justify-between py-2 px-2 md:px-4 border-b-[1px] border-gray300 ">
                 <FontAwesomeIcon icon={faCode} className="text-blue200" />
                 {selectedTab && <span className="text-sm">{selectedTab?.title} - geniusapc.com</span>}
                 <Link href={'/'}>

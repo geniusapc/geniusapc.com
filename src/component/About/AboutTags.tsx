@@ -1,5 +1,6 @@
 import React from 'react'
 import HtmlTag from './HtmlTag'
+import { about } from "@/resources"
 
 function AboutTags() {
     return (
@@ -9,7 +10,7 @@ function AboutTags() {
             </HtmlTag>
 
             <HtmlTag op={'<p>'} ct={'</p>'}>
-                I'm Prince Arthur, a full-stack developer with four years of experience specializing
+                I'm {about.name}, a {about.role} with four years of experience specializing
                 in both backend and frontend technologies. On the backend, I have a strong command of
                 Node.js and Nest.js, enabling me to build efficient and scalable server-side
                 applications. With expertise in RESTful APIs, database management, and server-side

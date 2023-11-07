@@ -2,6 +2,7 @@ import React from 'react';
 
 import { about } from '../../resources';
 import Typewriter from './Typewriter';
+import TopBorder from '../Border/TopBorder';
 
 
 
@@ -11,10 +12,7 @@ function Terminal({ className }) {
             className={`w-full md:w-[500px] h-[240px] md:h-[270px] bg-gray200 rounded ${className}`}
         >
             <div className="bg-gradient-to-r from-[#11152c] to-[#0a0d38] rounded-lg select-none border border-[#1F223C] relative">
-                <div className="flex flex-row">
-                    <div className="h-[1px] bg-gradient-to-r from-transparent via-pink-500 to-violet-600 w-full"></div>
-                    <div className="h-[1px] bg-gradient-to-r from-violet-600 to-transparent w-full"></div>
-                </div>
+                <TopBorder />
                 <div className="px-8 py-5">
                     <div className="flex flex-row space-x-2">
                         <div className="rounded-full bg-red-400 w-3 h-3"></div>

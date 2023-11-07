@@ -6,6 +6,7 @@ import { faHtml5, faJs } from '@fortawesome/free-brands-svg-icons';
 import { useSearchParams } from 'next/navigation';
 import { Tab, TabMap } from '@/component/About/types';
 import { Tabs } from '@/component/About/enums';
+import TopBorder from '@/component/Border/TopBorder';
 
 const DefaultBtn = ({
     Text,
@@ -62,7 +63,9 @@ export default function Page() {
 
     return (
         <main className="flex flex-col md:flex-row  h-full  md:justify-between  overflow-hidden md:pl-12 md:pt-12 select-none">
+
             <div className="bg-gray100 w-full h-full mb-12">
+                <TopBorder />
                 <AboutNav selectedTab={currentTab} tabs={tabs} />
                 <section className="p-1 md:p-4 h-full  w-full pb-20 flex ">
                     <div className="w-full lg:w-3/5  border-gray300 border-r-[1px] p-4 pb-24 overflow-y-scroll ">

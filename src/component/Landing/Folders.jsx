@@ -3,13 +3,6 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFolderOpen } from '@fortawesome/free-solid-svg-icons';
 
-const folders = [
-    { id: 1, name: 'About', link: '/about' },
-    { id: 2, name: 'Contact', link: '/about' },
-    { id: 3, name: 'Projects', link: '/projects' },
-    { id: 4, name: 'Certification', link: '/about' },
-    { id: 5, name: 'Skills', link: '/about?tab=skills' },
-];
 
 export default function Folders({ className }) {
     return (
@@ -23,12 +16,20 @@ export default function Folders({ className }) {
                             flip="horizontal"
                             icon={faFolderOpen}
                         />
-                        <span className="folderName">{e.name}</span>
+                        <span className="font-semibold">{e.name}</span>
                     </div>
                 </Link>
             ))}
         </div>
     );
 }
+
+const folders = [
+    { id: 1, name: 'About', link: '/about' },
+    { id: 2, name: 'Contact', link: '/about' },
+    { id: 3, name: 'Projects', link: '/projects' },
+    { id: 4, name: 'Certification', link: '/about' },
+    { id: 5, name: 'Skills', link: '/about?tab=skills' },
+];
 
 
