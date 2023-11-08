@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 
 export const SkillEnumComponent = ({ children, title }: { children: ReactNode; title: string }) => {
   return (
-    <div>
+    <div className='mb-4 md:mb-12'>
       <span className="text-blue200 pr-2"> enum</span>
       <span className="text-green-600 pr-2"> {title} </span>
       <span className="text-yellow-700"> {'{'} </span>

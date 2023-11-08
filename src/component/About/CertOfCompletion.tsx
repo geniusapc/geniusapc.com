@@ -10,7 +10,7 @@ interface Icert {
 
 const CertOfCompletion = ({ certs, certProvider }: { certs: Icert[]; certProvider: string }) => {
     return (
-        <div className="shadow-xl px-2 py-8">
+        <div className="shadow-xl px-2 py-4">
             <div className="text-blue200 text-left md:text-right mb-4 text-sm mt-8  ">{certProvider}</div>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-3 '>
                 {certs.map((item) => (
@@ -59,7 +59,7 @@ const Certification = () => {
                 ))}
             </div>
 
-            <h2 className="text-center md:text-right underline  decoration-wavy  underline-offset-4 mt-12 text-gray400  mb-4"> Certificate of Completion </h2>
+            <h2 className="text-center md:text-right underline  decoration-wavy  underline-offset-4 mt-12 text-gray400  mb-2"> Certificate of Completion </h2>
 
             <CertOfCompletion
                 certProvider={'AWS Skill Builder'}
