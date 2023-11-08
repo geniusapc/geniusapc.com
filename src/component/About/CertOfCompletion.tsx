@@ -10,8 +10,8 @@ interface Icert {
 
 const CertOfCompletion = ({ certs, certProvider }: { certs: Icert[]; certProvider: string }) => {
     return (
-        <div className="shadow-xl px-2 py-8">
-            <div className="text-blue200 text-left md:text-right mb-4 text-sm mt-8  ">{certProvider}</div>
+        <div className="border border-[#1F223C] px-2 py-4">
+            <div className="text-blue200 text-left md:text-right mb-4 text-sm  ">{certProvider}</div>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-3 '>
                 {certs.map((item) => (
                     <a key={item.name} className='cursor-pointer' href={item.link}>
@@ -34,7 +34,7 @@ const CertWithExternalLink = ({
     href: string;
 }) => {
     return (
-        <a href={href} target={'_blank'} className="flex flex-row  text-sm items-center gap-4 cursor-pointer shadow-xl py-8 px-4">
+        <a href={href} target={'_blank'} className="flex flex-row  text-sm items-center gap-4 cursor-pointer border border-[#1F223C] py-8 px-4">
             <Image alt={title} src={imgSrc} className="rounded-2xl" width={30} height={30} />
             <span>{title}</span>
             <FontAwesomeIcon icon={faExternalLink} className="text-blue200 -ml-2  " />
@@ -59,7 +59,7 @@ const Certification = () => {
                 ))}
             </div>
 
-            <h2 className="text-center md:text-right underline  decoration-wavy  underline-offset-4 mt-12 text-gray400  mb-4"> Certificate of Completion </h2>
+            <h2 className="text-center md:text-right underline  decoration-wavy  underline-offset-4 mt-12 text-gray400  mb-2"> Certificate of Completion </h2>
 
             <CertOfCompletion
                 certProvider={'AWS Skill Builder'}
