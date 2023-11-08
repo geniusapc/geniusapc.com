@@ -25,8 +25,8 @@ export default function Folders({ className }: { className: string }) {
 
 const folders = [
   { id: "1", name: "About", link: "/about" },
-  { id: "2", name: "Contact", link: "/about" },
-  { id: "3", name: "Projects", link: "/projects" },
-  { id: "4", name: "Certification", link: "/about" },
+  { id: "2", name: "Certification", link: "/about?tab=certifications" },
+  { id: "3", name: "Contact", link: "/about" },
+  { id: "4", name: "Projects", link: "/projects" },
   { id: "5", name: "Skills", link: "/about?tab=skills" },
 ];
