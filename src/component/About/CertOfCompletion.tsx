@@ -10,11 +10,11 @@ interface Icert {
 
 const CertOfCompletion = ({ certs, certProvider }: { certs: Icert[]; certProvider: string }) => {
     return (
-        <div className="border border-[#1F223C] px-2 py-4">
+        <div className=" px-2 py-4">
             <div className="text-blue200 text-left md:text-right mb-4 text-sm  ">{certProvider}</div>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-3 '>
                 {certs.map((item) => (
-                    <a key={item.name} className='cursor-pointer' href={item.link}>
+                    <a key={item.name} className='cursor-pointer border border-[#1F223C] p-4' href={item.link}>
                         <span className='text-sm'>{item.name}</span>
                         <FontAwesomeIcon icon={faExternalLink} className="text-blue200 ml-2  text-xs " />
                     </a>
