@@ -9,7 +9,7 @@ import { Tabs } from '@/component/About/enums';
 import TopBorder from '@/component/Border/TopBorder';
 import Skills from '@/component/About/Skills';
 import Profile from '@/component/About/Profile';
-import Certification from '@/component/About/CertOfCompletion';
+import Certification from '@/component/About/Certification';
 
 export default function Page() {
     const searchParams = useSearchParams();
@@ -60,7 +60,7 @@ const tabs: TabMap = {
     },
     [Tabs.certifications]: {
         id: Tabs.certifications,
-        name: 'Certifications',
+        name: 'certifications',
         title: 'certifications.md',
         icon: faHtml5,
         tab: 'certifications',

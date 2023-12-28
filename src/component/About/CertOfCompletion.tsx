@@ -1,80 +1,47 @@
-import { certifications } from "@/resources";
-import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/image";
+import { certifications } from '@/resources';
+import { faExternalLink } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
 
-interface Icert {
-    name: string;
+
+type CertItemProp = {
+    title: string;
     link: string;
-}
-
-const CertOfCompletion = ({ certs, certProvider }: { certs: Icert[]; certProvider: string }) => {
-    return (
-        <div className=" px-2 py-4">
-            <div className="text-blue200 text-left md:text-right mb-4 text-sm  ">{certProvider}</div>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-3 '>
-                {certs.map((item) => (
-                    <a key={item.name} className='cursor-pointer border border-[#1F223C] p-4' href={item.link}>
-                        <span className='text-sm'>{item.name}</span>
-                        <FontAwesomeIcon icon={faExternalLink} className="text-blue200 ml-2  text-xs " />
-                    </a>
-                ))}
-            </div>
-        </div>
-    );
+    target?: string;
+    key: string;
+    imgSrc?: string;
 };
 
-const CertWithExternalLink = ({
-    title,
-    imgSrc,
-    href,
-}: {
-    title: string;
-    imgSrc: string;
-    href: string;
-}) => {
+export const CertItem = ({ title, link, imgSrc, target = '_blank' }: CertItemProp) => {
     return (
-        <a href={href} target={'_blank'} className="flex flex-row  text-sm items-center gap-4 cursor-pointer border border-[#1F223C] py-8 px-4">
-            <Image alt={title} src={imgSrc} className="rounded-2xl" width={30} height={30} />
-            <span>{title}</span>
-            <FontAwesomeIcon icon={faExternalLink} className="text-blue200 -ml-2  " />
+        <a
+            className="flex flex-row  text-sm items-center gap-4 cursor-pointer border border-[#1F223C] p-4"
+            href={link}
+            target={target}
+        >
+            {imgSrc && <Image alt={title} src={imgSrc} className="rounded-2xl" width={30} height={30} />}
+            <span className="text-sm">{title}</span>
+            <FontAwesomeIcon icon={faExternalLink} className="text-blue200 ml-2  text-xs " />
         </a>
     );
 };
 
-
-const Certification = () => {
+export const CertOfCompletion = () => {
+    const certs = certifications.minor;
     return (
-        <>
-
-            <h2 className="text-center md:text-right underline decoration-wavy underline-offset-4 text-gray400  mb-6"> Certification</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {certifications.majorCert.map((cert) => (
-                    <CertWithExternalLink
-                        key={cert.title}
-                        title={cert.title}
-                        imgSrc={cert.imgSrc}
-                        href={cert.href}
-                    />
-                ))}
-            </div>
-
-            <h2 className="text-center md:text-right underline  decoration-wavy  underline-offset-4 mt-12 text-gray400  mb-2"> Certificate of Completion </h2>
-
-            <CertOfCompletion
-                certProvider={'AWS Skill Builder'}
-                certs={certifications.minor.awsSkillBuilder}
-            />
-            <CertOfCompletion
-                certProvider={'Udemy'}
-                certs={certifications.minor.udemy}
-            />
-            <CertOfCompletion
-                certProvider={'Pluralsite'}
-                certs={certifications.minor.pluralsite}
-            />
-        </>
+        <div className=" px-2 py-4">
+            {certs.map((item) => (
+                <>
+                    <div key={item.provider} className="text-blue200 text-left md:text-right mb-4 text-sm  ">
+                        {item.provider}
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 ">
+                        {item.cert.map((item) => (
+                            <CertItem key={item.title} title={item.title} link={item.link} />
+                        ))}
+                    </div>
+                </>
+            ))}
+        </div>
     );
 };
-
-export default Certification
