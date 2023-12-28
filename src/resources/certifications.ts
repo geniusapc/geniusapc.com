@@ -1,40 +1,43 @@
 const awsSkillBuilder = [
-  { name: 'Introduction to AWS Farget', link: '/pdf/certificates/awsBuilder/intro_to_fargate.pdf' },
   {
-    name: 'Introduction to Container',
+    title: 'Introduction to AWS Farget',
+    link: '/pdf/certificates/awsBuilder/intro_to_fargate.pdf',
+  },
+  {
+    title: 'Introduction to Container',
     link: '/pdf/certificates/awsBuilder/intro_to_containers.pdf',
   },
   {
-    name: 'AWS Cloud Practioner Essentials',
+    title: 'AWS Cloud Practioner Essentials',
     link: '/pdf/certificates/awsBuilder/aws_cloud_practitioner.pdf',
   },
 ];
 
 const udemy = [
-  { name: 'IP Subnetting -  Zero to hero', link: '/pdf/certificates/udemy/ip_addressing.pdf' },
-  { name: 'NGINX, Apache, SSL Encryption', link: '/pdf/certificates/udemy/nginx.pdf' },
-  { name: 'Linux for cloud and devops', link: '/pdf/certificates/udemy/linux.pdf' },
+  { title: 'IP Subnetting -  Zero to hero', link: '/pdf/certificates/udemy/ip_addressing.pdf' },
+  { title: 'NGINX, Apache, SSL Encryption', link: '/pdf/certificates/udemy/nginx.pdf' },
+  { title: 'Linux for cloud and devops', link: '/pdf/certificates/udemy/linux.pdf' },
 ];
 
 const pluralsite = [
   {
-    name: 'Node.js: The Big Picture',
+    title: 'Node.js: The Big Picture',
     link: '/pdf/certificates/pluralsite/Node.js_The_Big_Picture.pdf',
   },
   {
-    name: 'Fundamental Cloud Concepts for AWS',
+    title: 'Fundamental Cloud Concepts for AWS',
     link: '/pdf/certificates/pluralsite/fundamental_Cloud_Concepts_for_AWS.pdf',
   },
   {
-    name: 'Cloud: Executive Briefing',
+    title: 'Cloud: Executive Briefing',
     link: '/pdf/certificates/pluralsite/cloud_Executive_Briefing.pdf',
   },
   {
-    name: 'Introduction to Security and Architecture on AWS',
+    title: 'Introduction to Security and Architecture on AWS',
     link: '/pdf/certificates/pluralsite/introduction_to_Security_and_Architecture_on.pdf',
   },
   {
-    name: 'Understanding AWS Core Services',
+    title: 'Understanding AWS Core Services',
     link: '/pdf/certificates/pluralsite/understanding_AWS_Core_Services.pdf',
   },
 ];
@@ -57,10 +60,10 @@ const certifications = {
       href: 'https://confirm.udacity.com/X7Q4DDAW',
     },
   ],
-  minor: {
-    awsSkillBuilder,
-    udemy,
-    pluralsite,
-  },
+  minor: [
+    { provider: 'AWS Skill Builder', cert: awsSkillBuilder },
+    { provider: 'Udemy', cert: udemy },
+    { provider: 'Pluralsite', cert: pluralsite },
+  ],
 };
 export default certifications;
