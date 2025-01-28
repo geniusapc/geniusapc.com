@@ -35,7 +35,7 @@ export const CertOfCompletion = () => {
                     <div key={item.provider} className="text-blue200 text-left md:text-right mb-4 text-sm  ">
                         {item.provider}
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 ">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
                         {item.cert.map((item) => (
                             <CertItem key={item.title} title={item.title} link={item.link} />
                         ))}
