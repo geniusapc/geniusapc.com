@@ -22,7 +22,7 @@ export const Project = ({ project }: { project: IProject }) => {
 
                 <div
                     className={` ${!isVisible &&
-                        'line-clamp-5 overflow-hidden relative bg-clip-text text-transparent bg-gradient-to-b from-white200 to-transparent'
+                        'line-clamp-5 overflow-hidden relative bg-clip-text text-transparent bg-gradient-to-b from-white100 to-transparent'
                         }`}
                 >
                     <p>{project.description}</p>

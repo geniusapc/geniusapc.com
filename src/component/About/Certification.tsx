@@ -3,7 +3,7 @@ import { MajorCert } from './MajorCert';
 
 const CertHeader = ({ text }: { text: string }) => {
     return (
-        <h2 className="text-center md:text-right underline decoration-wavy underline-offset-4 text-gray400  mb-6">
+        <h2 className="text-center md:text-right underline decoration-wavy underline-offset-4 text-gray400  mb-6 mt-12">
             {text}
         </h2>
     );
