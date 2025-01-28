@@ -19,9 +19,9 @@ export default function RootLayout({
           <title>{aboutMe.username}</title>
           <meta name="description" content={aboutMe.metaDescription}></meta>
           <SideBar />
-          <div className="p-4 md:px-32 h-full pt-12 md:pt-16  relative overflow-hidden">
+          <div className="p-4 md:px-8 md:pl-20  lg:px-20 lg:pl-40 h-full pt-12 md:pt-16  relative overflow-hidden">
             <div className="absolute  bg-[url('/img/bg2.svg')]  bg-opacity-10 inset-0  bg-cover bg-center"></div>
-            <div className="relative h-full">{children}</div>
+            <div className="relative h-full w-full">{children}</div>
           </div>
         </div>
       </body>

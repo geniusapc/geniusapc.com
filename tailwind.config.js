@@ -15,6 +15,7 @@ module.exports = {
         gray200: '#12172a',
         gray300: '#2d333b',
         gray400: '#768390',
+        gray500: '#1F223C',
         white100: '#e1e1e6',
         white200: '#bebec2',
         blue100: '#539cf531',
@@ -23,5 +24,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };

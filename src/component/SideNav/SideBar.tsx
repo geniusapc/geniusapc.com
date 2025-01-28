@@ -11,12 +11,19 @@ import {
   faBriefcase,
 } from "@fortawesome/free-solid-svg-icons";
 import { about } from "../../resources";
+import Image from "next/image";
 
 export default function SideBar() {
   const { linkedIn, github, twitter } = about.socailLinks;
 
   return (
-    <aside className="fixed z-50 bottom-0 h-16 md:h-screen bg-gray200 text-white200 w-full md:w-20 items-center flex flex-col justify-between  py-auto md:py-12 select-none">
+
+    <aside className="fixed z-50 bottom-0 h-16 md:h-screen bg-gray200 text-white200 w-full md:w-20 items-center flex flex-col justify-between  py-auto md:py-2 select-none">
+      <div className=" hidden md:block">
+        <Image src="/logo.png" width={60} height={60} alt="logo" />
+        <div className="w-full h-[1px]  my-4 md:my-6"></div>
+
+      </div>
       <div className="flex flex-row md:flex-col  justify-around md:justify-start  items-center  md:space-y-10 h-full w-full shadow-2xl">
         {links.map((e) => (
           <Link
