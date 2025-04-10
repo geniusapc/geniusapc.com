@@ -3,7 +3,7 @@ import { IProject } from "../enum";
 export const projects: IProject[] = [
     {
         image: "/img/projects/reals.png",
-        title: "Reals Payment Service",
+        title: "Reals Financial Services",
         description: "Developed a scalable multi-service payment platform that allows users to seamlessly purchase digital services and utilities in Nigeria",
         features: [
             "Implemented service modules for airtime, data, electricity, cable TV, internet, and exam pins.",
