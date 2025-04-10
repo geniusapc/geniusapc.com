@@ -2,6 +2,21 @@ import { IProject } from "../enum";
 
 export const projects: IProject[] = [
     {
+        image: "/img/projects/reals.png",
+        title: "Reals Payment Service",
+        description: "Developed a scalable multi-service payment platform that allows users to seamlessly purchase digital services and utilities in Nigeria",
+        features: [
+            "Implemented service modules for airtime, data, electricity, cable TV, internet, and exam pins.",
+            "Integrated Paystack payment gateways with webhook support for real-time transaction updates.",
+            "Designed a reusable and secure wallet funding system.",
+            "Implemented a robust admin dashboard for monitoring transactions and managing services.",
+            "Built a robust transaction tracking and beneficiary management system using modular microservice architecture",
+        ],
+        technologies: "Node.js, Digital Ocean, Github Action, Nest.js, Nextjs, CSS.",
+        site: "https://www.realsspv.com",
+        github: ""
+    },
+    {
         image: "/img/projects/actors-pool.png",
         title: "Actor's Pool",
         description: "Developed a comprehensive directory platform that connects African entertainers with opportunities in the entertainment industry.",
