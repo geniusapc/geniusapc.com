@@ -1,12 +1,20 @@
-const DefaultBtn = ({
-    Text, ...rest
-}: { Text: string } & React.DetailedHTMLProps<
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
->) => (
-    <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold text-xs py-1 px-2 rounded inline-flex items-center" {...rest}>
-        {Text}
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
+
+type Props = {
+    text: string;
+    icon?: IconDefinition;
+    className?: string;
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+
+const DefaultBtn = ({ text, icon, className, ...rest }: Props) => (
+    <button
+        className={`flex items-center gap-2 px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-300 ${className}`}
+        {...rest}
+    >
+        {icon && <FontAwesomeIcon icon={icon} />}
+        {text}
     </button>
 );
 
-export default DefaultBtn
+export default DefaultBtn;

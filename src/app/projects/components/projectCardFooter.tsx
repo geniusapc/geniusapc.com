@@ -28,7 +28,7 @@ export const CardFooter = ({
 
                 <a
                     href={project.site ? project.site : '#'}
-                    className={`text-pink-600 hover:text-pink-800 h-6 my-auto 
+                    className={`text-pink-400 hover:text-pink-800 h-6 my-auto 
                          ${!project.site && ' cursor-not-allowed'}`}
                     target={project.site ? '_blank' : '_self'}
                     title={project.site ? 'Visit Project Site' : 'Project site unavailable'}
@@ -40,7 +40,7 @@ export const CardFooter = ({
 
             <button
                 onClick={toggleVisibility}
-                className="flex items-center justify-center gap-2 px-4 py-2 text-white rounded-lg bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:outline-none"
+                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-pink-400 rounded-lg font-medium text-white hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
             >
                 {isVisible ? 'Show Less' : 'Show More'}
 

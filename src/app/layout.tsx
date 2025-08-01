@@ -5,12 +5,14 @@ import SideBar from "../component/SideNav/SideBar";
 config.autoAddCss = false;
 import "./globals.css";
 import aboutMe from "@/resources/about";
+import ParticleBackground from '../component/ParticleBackground';
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+
   return (
     <html lang="en">
       <body>
@@ -18,6 +20,7 @@ export default function RootLayout({
         <div className="h-screen w-full">
           <title>{aboutMe.username}</title>
           <meta name="description" content={aboutMe.metaDescription}></meta>
+          <ParticleBackground />
           <SideBar />
           <div className="p-4 md:px-8 md:pl-20  lg:px-20 lg:pl-40 h-full pt-12 md:pt-16  relative overflow-hidden">
             <div className="absolute  bg-[url('/img/bg2.svg')]  bg-opacity-10 inset-0  bg-cover bg-center"></div>

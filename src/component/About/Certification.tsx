@@ -11,13 +11,13 @@ const CertHeader = ({ text }: { text: string }) => {
 
 const Certification = () => {
     return (
-        <>
+        <div>
             <CertHeader text={'Certification'} />
             <MajorCert />
             <CertHeader text={'Certificate of Completion'} />
             <CertOfCompletion />
 
-        </>
+        </div>
     );
 };
 

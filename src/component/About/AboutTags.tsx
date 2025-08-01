@@ -3,6 +3,10 @@ import HtmlTag from "./HtmlTag";
 import { about } from "@/resources";
 
 function AboutTags() {
+    const getYearsOfExperience = (startYear: number = 2020) => {
+        const currentYear = new Date().getFullYear();
+        return currentYear - startYear;
+    };
     return (
         <HtmlTag op={"<article>"} ct={"</article>"}>
             <HtmlTag op={"<h1>"} ct={"</h1>"}>
@@ -10,7 +14,7 @@ function AboutTags() {
             </HtmlTag>
 
             <HtmlTag op={"<p>"} ct={"</p>"}>
-                I&apos;m {about.name}, a {about.role} with four years of experience
+                I&apos;m {about.name}, a {about.role} with {getYearsOfExperience()} years of experience
                 specializing in both backend and frontend technologies. On the backend,
                 I have a strong command of Node.js and Nest.js, enabling me to build
                 efficient and scalable server-side applications. With expertise in

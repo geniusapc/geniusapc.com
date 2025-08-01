@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 export enum Tabs {
-    about,
-    skills,
-    certifications,
+    about = "about",
+    skills = "skils",
+    certifications = "certifications",
+    profile = 'profile'
 }

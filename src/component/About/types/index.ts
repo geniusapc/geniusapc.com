@@ -8,12 +8,13 @@ export interface IHtmlTags {
 }
 
 export type Tab = {
-  id: number;
+  id: string;
   name: string;
   title: string;
   icon: IconProp;
   tab: string;
   Component: () => React.JSX.Element;
+  isMobileOnly?:boolean
 };
 
 export interface IAboutNav {
@@ -23,4 +24,5 @@ export interface IAboutNav {
 
 export interface TabMap {
   [key: string]: Tab;
+
 }

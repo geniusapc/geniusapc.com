@@ -1,72 +1,94 @@
-import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+'use client';
+
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faLinkedin,
   faGithub,
+  faLinkedin,
   faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
+} from '@fortawesome/free-brands-svg-icons';
 import {
   faHome,
   faIdCard,
   faBriefcase,
-} from "@fortawesome/free-solid-svg-icons";
-import { about } from "../../resources";
-// import Image from "next/image";
+  faCode,
+} from '@fortawesome/free-solid-svg-icons';
+import { about } from '../../resources';
+import { SocialLink } from './SocialLinks';
 
-export default function SideBar() {
+const NAV_LINKS = [
+  { id: 'home', icon: faHome, name: 'Home', href: '/' },
+  { id: 'about', icon: faIdCard, name: 'About', href: '/about' },
+  { id: 'projects', icon: faBriefcase, name: 'Projects', href: '/projects' },
+];
+
+const SideBar: React.FC = () => {
+  const pathname = usePathname();
+  const [activeSection, setActiveSection] = useState('home');
   const { linkedIn, github, twitter } = about.socailLinks;
 
+  useEffect(() => {
+    const main = document.querySelector('main');
+    if (main?.id) {
+      setActiveSection(main.id);
+    }
+  }, [pathname]);
+
   return (
+    <aside className="fixed bottom-0 z-50 w-full h-16 bg-gray200 text-white200 shadow-2xl md:h-screen md:w-20 md:flex md:flex-col md:items-center md:justify-between md:py-6">
 
-    <aside className="fixed z-50 bottom-0 h-16 md:h-screen bg-gray200 text-white200 w-full md:w-20 items-center flex flex-col justify-between  py-auto md:py-2 select-none">
 
-      <div className="flex flex-row md:flex-col  justify-around md:justify-start  items-center  md:space-y-10 h-full w-full shadow-2xl md:mt-8">
-        {links.map((e) => (
-          <Link
-            href={e.link}
-            key={e.id}
-            className="tooltip flex flex-col  justify-center gap-1 md:gap-2"
+      <div className=' flex md:flex-col md:space-y-12 h-full w-full '>
 
-            data-tooltip={e.name}
-          >
-            <FontAwesomeIcon size="lg" className="text-2xl" icon={e.icon} />
-            <span className="block text-sm font-semibold">{e.name}</span>
-          </Link>
-        ))}
+        {/* Top Logo + Divider */}
+        <div className="hidden md:flex flex-col items-center space-y-4">
+
+          <div className="relative">
+            <FontAwesomeIcon
+              icon={faCode}
+              className="w-7 h-7 text-blue-400 drop-shadow-[0_0_8px_rgba(59,130,246,0.8)]"
+            />
+            <div className="absolute inset-0 animate-ping rounded-full bg-blue-500 opacity-20" />
+          </div>
+
+          <div className="w-8 h-px bg-gray500" />
+        </div>
+
+        {/* Navigation Icons */}
+        <nav className="flex w-full justify-around items-center md:flex-col md:items-center md:space-y-12">
+          {NAV_LINKS.map(({ id, icon, name, href }) => (
+            <Link
+              key={id}
+              href={href}
+              className="group flex flex-col items-center justify-center gap-1 transition-all duration-300"
+              aria-label={name}
+            >
+              <FontAwesomeIcon
+                icon={icon}
+                size="lg"
+                className={`text-xl transition-colors duration-300 group-hover:text-blue200 ${activeSection === id ? 'text-blue200' : ''
+                  }`}
+              />
+              <span className="text-xs font-semibold hidden md:block group-hover:text-blue200">
+                {name}
+              </span>
+            </Link>
+          ))}
+        </nav>
       </div>
-      <section className="hidden md:flex flex-col space-y-4  text-lg">
-        <a href={linkedIn.link} target="_blank">
-          <FontAwesomeIcon icon={faLinkedin} />
-        </a>
-        <a href={github.link} target="_blank">
-          <FontAwesomeIcon icon={faGithub} />
-        </a>
-        <a href={twitter.link} target="_blank">
-          <FontAwesomeIcon icon={faTwitter} />
-        </a>
+
+      {/* Social Icons */}
+      <section className="hidden md:flex flex-col items-center space-y-5">
+        <SocialLink href={linkedIn.link} icon={faLinkedin} label="LinkedIn" />
+        <SocialLink href={github.link} icon={faGithub} label="GitHub" />
+        <SocialLink href={twitter.link} icon={faTwitter} label="Twitter" />
       </section>
     </aside>
   );
-}
+};
 
-const links = [
-  {
-    id: 1,
-    icon: faHome,
-    name: "Home",
-    link: "/",
-  },
-  {
-    id: 2,
-    icon: faIdCard,
-    name: "About",
-    link: "/about",
-  },
 
-  {
-    id: 3,
-    icon: faBriefcase,
-    name: "Projects",
-    link: "/projects",
-  },
-];
+
+export default SideBar;
