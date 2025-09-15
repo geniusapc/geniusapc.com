@@ -3,9 +3,9 @@ const aboutMe = {
   username: 'Geniusapc',
   location: 'Lagos, Nigeria',
   website: 'https://geniusapc.com',
-  yearsOfExperience: 4,
+  yearsOfExperience: 5,
   metaDescription: `Prince Arthur is an experienced software developer 
-  with 4 years of experience in developing and deploying secure, scalable, and
+  with 5 years of experience in developing and deploying secure, scalable, and
   high-performance web applications.`,
   role: 'Software Developer',
   email: 'geniusapc@gmail.com',

@@ -2,6 +2,23 @@ import { IProject } from "../enum";
 
 export const projects: IProject[] = [
     {
+        image: "/img/projects/ogarent.png",
+        title: "OgaRent",
+        description: "Architected and led development of OgaRent, a scalable property rental and short-let platform connecting home seekers with verified home owners across Nigeria. Focused on trust, seamless payments, and an intuitive booking experience.",
+        features: [
+            "Designed a modular, service-oriented architecture supporting property search, booking, wallet funding, and revenue reconciliation.",
+            "Implemented advanced search and filtering (location, property type, pricing, amenities) optimized for performance and scalability.",
+            "Built a secure wallet and payment flow with Paystack integration, real-time webhook handling, and automated refund/settlement logic.",
+            "Engineered admin and landlord dashboards with role-based access control for efficient property, booking, and revenue management.",
+            "Integrated notification channels (email, SMS, in-app) for real-time user engagement.",
+            "Established CI/CD pipelines with GitHub Actions and cloud deployment for reliable, zero-downtime releases.",
+            "Applied best practices in security, data validation, and user verification to build trust between home seekers and home owners."
+        ],
+        technologies: "NestJS (backend), Next.js/React (frontend), MongoDB, Redis (caching/queue), Paystack API, DigitalOcean, GitHub Actions (CI/CD), TailwindCSS.",
+        site: "https://www.ogarent.com",
+        github: ""
+    },
+    {
         image: "/img/projects/reals.png",
         title: "Reals Financial Services",
         description: "Developed a scalable multi-service payment platform that allows users to seamlessly purchase digital services and utilities in Nigeria",
