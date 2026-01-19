@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -7,16 +7,21 @@ import {
     faFolder,
     faTerminal,
     faStar,
-    faCodeFork,
+    faEye,
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 interface ProjectHeaderProps {
     totalProjects: number;
+    searchTerm?: string;
+    // eslint-disable-next-line no-unused-vars
+    setSearchTerm?: (term: string) => void;
 }
 
-const ProjectHeader = ({ totalProjects }: ProjectHeaderProps) => {
+const ProjectHeader = ({ totalProjects, searchTerm = '', setSearchTerm }: ProjectHeaderProps) => {
     const [typedText, setTypedText] = useState('');
+    const [typingDone, setTypingDone] = useState(false);
+    const inputRef = useRef<HTMLInputElement>(null);
     const fullText = 'cd ~/projects && ls -la';
 
     useEffect(() => {
@@ -27,13 +32,33 @@ const ProjectHeader = ({ totalProjects }: ProjectHeaderProps) => {
                 index++;
             } else {
                 clearInterval(timer);
+                setTypingDone(true);
             }
         }, 50);
         return () => clearInterval(timer);
     }, []);
 
+    // Focus input when clicking on terminal area
+    const handleTerminalClick = () => {
+        if (typingDone && inputRef.current) {
+            inputRef.current.focus();
+        }
+    };
+
+    // Keyboard shortcut: Ctrl/Cmd + K to focus search
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                inputRef.current?.focus();
+            }
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, []);
+
     return (
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
             {/* GitHub-style header */}
             <motion.div
                 initial={{ opacity: 0, y: -20 }}
@@ -59,7 +84,7 @@ const ProjectHeader = ({ totalProjects }: ProjectHeaderProps) => {
                             <span>42</span>
                         </span>
                         <span className="flex items-center gap-1 px-3 py-1 bg-[#21262d] border border-[#30363d] rounded-md text-gray-500">
-                            <FontAwesomeIcon icon={faCodeFork} />
+                            <FontAwesomeIcon icon={faEye} />
                             <span>12</span>
                         </span>
                     </div>
@@ -77,32 +102,50 @@ const ProjectHeader = ({ totalProjects }: ProjectHeaderProps) => {
                     </div>
                 </div>
 
-                {/* Terminal command */}
-                <div className="bg-[#0d1117] px-3 sm:px-4 py-2 sm:py-3 font-mono text-xs sm:text-sm border-t border-[#30363d] overflow-x-auto">
-                    <div className="flex items-center gap-2 min-w-max">
+                {/* Terminal command with search input */}
+                <div
+                    className="bg-[#0d1117] px-3 sm:px-4 py-2 sm:py-3 font-mono text-xs sm:text-sm border-t border-[#30363d] cursor-text"
+                    onClick={handleTerminalClick}
+                >
+                    <div className="flex items-center gap-2">
                         <FontAwesomeIcon icon={faTerminal} className="text-green-400 flex-shrink-0" />
                         <span className="text-green-400">~</span>
-                        <span className="text-gray-300">{typedText}</span>
-                        <motion.span
-                            animate={{ opacity: [1, 0] }}
-                            transition={{ duration: 0.8, repeat: Infinity }}
-                            className="inline-block w-2 h-4 bg-green-400 ml-0.5"
-                        />
+                        <span className="text-gray-300 whitespace-nowrap">{typedText}</span>
+
+                        {/* Search input that appears after typing animation */}
+                        {typingDone && setSearchTerm ? (
+                            <div className="flex items-center flex-1 min-w-0">
+                                <span className="text-gray-500 mx-1">|</span>
+                                <span className="text-yellow-400 mr-1">grep</span>
+                                <div className="relative flex-1 flex items-center">
+                                    <input
+                                        ref={inputRef}
+                                        type="text"
+                                        value={searchTerm}
+                                        onChange={(e) => setSearchTerm(e.target.value)}
+                                        placeholder="search..."
+                                        className="bg-transparent border-none outline-none text-gray-300 placeholder-gray-600 w-full min-w-[60px] caret-green-400"
+                                        style={{ caretColor: '#4ade80' }}
+                                    />
+                                    {/* Blinking cursor when empty and not focused */}
+                                    {!searchTerm && (
+                                        <motion.span
+                                            animate={{ opacity: [1, 0] }}
+                                            transition={{ duration: 0.8, repeat: Infinity }}
+                                            className="absolute left-0 inline-block w-2 h-4 bg-green-400 pointer-events-none"
+                                        />
+                                    )}
+                                </div>
+                            </div>
+                        ) : (
+                            <motion.span
+                                animate={{ opacity: [1, 0] }}
+                                transition={{ duration: 0.8, repeat: Infinity }}
+                                className="inline-block w-2 h-4 bg-green-400 ml-0.5"
+                            />
+                        )}
                     </div>
                 </div>
-            </motion.div>
-
-            {/* Decorative code comment */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1 }}
-                className="mt-3 sm:mt-4 font-mono text-[10px] sm:text-xs text-gray-600"
-            >
-                <span className="text-gray-500">{'// '}</span>
-                <span className="text-green-400">{totalProjects} projects</span>
-                <span className="hidden sm:inline text-gray-500">{' - '}</span>
-                <span className="hidden sm:inline text-purple-400">Built with passion & coffee ☕</span>
             </motion.div>
         </div>
     );

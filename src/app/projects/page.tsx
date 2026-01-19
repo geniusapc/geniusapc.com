@@ -35,15 +35,17 @@ export default function Page() {
 
                 {/* Main Content Area */}
                 <div className="flex-1 overflow-y-auto p-2 sm:p-4 md:p-6 lg:p-8 pb-16 sm:pb-20">
-                    {/* GitHub-style Header */}
-                    <ProjectHeader totalProjects={projects.length} />
+                    {/* GitHub-style Header with integrated search */}
+                    <ProjectHeader
+                        totalProjects={projects.length}
+                        searchTerm={searchTerm}
+                        setSearchTerm={setSearchTerm}
+                    />
 
-                    {/* Filter Bar with Search & View Toggle */}
+                    {/* Filter Bar with View Toggle only */}
                     <FilterBar
                         view={view}
                         setView={setView}
-                        searchTerm={searchTerm}
-                        setSearchTerm={setSearchTerm}
                     />
 
                     {/* No results message */}
@@ -106,11 +108,13 @@ export default function Page() {
                 </div>
             </div>
 
-            {/* Console-style Footer */}
-            <ConsoleFooter
-                projectCount={projects.length}
-                filteredCount={filteredProjects.length}
-            />
+            {/* Console-style Footer - desktop only */}
+            <div className="hidden lg:block">
+                <ConsoleFooter
+                    projectCount={projects.length}
+                    filteredCount={filteredProjects.length}
+                />
+            </div>
         </main>
     );
 }
