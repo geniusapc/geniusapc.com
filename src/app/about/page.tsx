@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import AboutNav from '@/component/About/AboutNav';
 import AboutTags from '@/component/About/AboutTags';
-import { faHtml5, faJs } from '@fortawesome/free-brands-svg-icons';
+import { faHtml5, faMarkdown } from '@fortawesome/free-brands-svg-icons';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Tab, TabMap } from '@/component/About/types';
 import { Tabs } from '@/component/About/enums';
@@ -11,8 +11,17 @@ import Skills from '@/component/About/Skills';
 import Profile from '@/component/About/Profile';
 import Certification from '@/component/About/Certification';
 import { motion, AnimatePresence } from 'framer-motion';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faCode } from '@fortawesome/free-solid-svg-icons';
 import useIsMobile from '@/hooks/useIsMobile';
+import StatusBar from '@/component/About/StatusBar';
+
+// Map tab names to file types for status bar
+const languageMap: { [key: string]: string } = {
+    about: 'HTML',
+    skills: 'TypeScript',
+    certifications: 'Markdown',
+    profile: 'TypeScript React'
+};
 
 export default function Page() {
     const searchParams = useSearchParams();
@@ -45,8 +54,8 @@ export default function Page() {
                 <TopBorder />
                 <AboutNav selectedTab={currentTab} tabs={tabs} />
 
-                <section className="p-1 mt-8 md:p-4 h-full w-full pb-20 flex">
-                    <div className="w-full lg:w-3/5 border-gray300 border-r-[1px] p-4 pb-24 overflow-y-scroll">
+                <section className="p-1 md:p-4 h-[calc(100vh-12rem)] md:h-[calc(100vh-8rem)] w-full pb-20 flex">
+                    <div className="w-full lg:w-3/5 lg:border-r-[1px] lg:border-gray300 p-2 md:p-4 pb-24 md:pb-48 overflow-y-auto">
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={mountedTab}
@@ -70,6 +79,12 @@ export default function Page() {
                     </motion.div>
                 </section>
             </div>
+
+            {/* IDE Status Bar */}
+            <StatusBar
+                fileName={currentTab?.title || 'about.html'}
+                language={languageMap[currentTab?.name || 'about']}
+            />
         </main>
     );
 }
@@ -96,7 +111,7 @@ const tabs: TabMap = {
         id: Tabs.skills,
         name: 'skills',
         title: 'skills.ts',
-        icon: faJs,
+        icon: faCode,
         tab: 'skills',
         Component: Skills,
     },
@@ -104,7 +119,7 @@ const tabs: TabMap = {
         id: Tabs.certifications,
         name: 'certifications',
         title: 'certification.md',
-        icon: faHtml5,
+        icon: faMarkdown,
         tab: 'certifications',
         Component: Certification,
     },
