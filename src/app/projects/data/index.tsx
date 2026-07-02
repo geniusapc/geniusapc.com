@@ -34,18 +34,32 @@ export const projects: IProject[] = [
         github: ""
     },
     {
-        image: "/img/projects/actors-pool.png",
-        title: "Actor's Pool",
-        description: "Developed a comprehensive directory platform that connects African entertainers with opportunities in the entertainment industry.",
+        image: "/img/projects/cevenapp.png",
+        title: "CEven",
+        description: "Built a childcare communication platform that gives parents timely visibility into their child's day while helping crèches keep care updates organized and easy to share.",
         features: [
-            "Talent listing for individuals looking to showcase their skills.",
-            "Advanced talent search functionality with filters.",
-            "Interactive dashboard for managing listed talents.",
-
+            "Keeps parents informed with real-time updates from their child's crèche.",
+            "Organizes daily care records including meals, naps, diapers, temperature, and medication.",
+            "Creates a clear communication channel between families and professional caregivers.",
+            "Reduces the mental load of tracking a child's routine through one dependable experience."
         ],
-        technologies: "React.js, Tailwind CSS, Node.js.",
-        site: "",
-        github: "https://github.com/geniusapc/actors-pool"
+        technologies: "Web Platform, Real-time Updates, Secure Cloud",
+        site: "https://cevenapp.com/",
+        github: ""
+    },
+    {
+        image: "/img/projects/succeedquiz.jpg",
+        title: "SucceedQuiz",
+        description: "Developed an interactive learning platform that helps students, educators, teams, and lifelong learners build knowledge through engaging quizzes, immediate feedback, and clear progress insights.",
+        features: [
+            "Delivers instant answer feedback so learners can identify and improve weak areas.",
+            "Supports customizable quizzes and a broad question catalog across multiple subjects.",
+            "Provides detailed analytics that make learning progress easy to understand.",
+            "Encourages collaborative learning through study groups, quiz sharing, achievements, and rewards."
+        ],
+        technologies: "Web Platform, Learning Analytics, Responsive Design",
+        site: "https://succeedquiz.com/",
+        github: ""
     },
     {
         image: "/img/projects/grant-loan.png",
@@ -60,19 +74,6 @@ export const projects: IProject[] = [
         technologies: "Node.js, React.js, Typescript, Tailwind CSS, Digital Ocean.",
         site: "https://fedgrantandloan.gov.ng",
         github: ""
-    },
-    {
-        image: "/img/projects/wheeloflife2.png",
-        title: "The wheel of life",
-        description: "Built a dynamic platform revolutionizing how coaches and clients connect through personalized, AI-driven insights and seamless scheduling.",
-        features: [
-            "Coaches design tailored questionnaires for their clients. Once clients complete the questionnaire, AI generates customized insights and recommendations, adding immediate value to the coaching process",
-            "Clients can seamlessly book appointments with their preferred coach for personalized, follow-up sessions",
-            "AWS services ensures high availability, scalability, and secure data management for a superior user experience"
-
-        ],
-        technologies: "AWS, Reactjs, Nodejs, Tailwind CSS",
-        site: "https://thewheeloflife.net",
-        github: ""
     }
+    
 ]

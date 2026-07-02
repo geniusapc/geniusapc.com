@@ -13,11 +13,11 @@ import {
   faHome,
   faIdCard,
   faBriefcase,
-  faTerminal,
 } from '@fortawesome/free-solid-svg-icons';
 import { about } from '../../resources';
 import { SocialLink } from './SocialLinks';
 import { motion } from 'framer-motion';
+import BrandLogo from '../BrandLogo';
 
 const NAV_LINKS = [
   { id: 'home', icon: faHome, name: 'Home', href: '/' },
@@ -44,23 +44,19 @@ const SideBar: React.FC = () => {
         {/* Logo Section - Desktop */}
         <div className="hidden md:flex flex-col items-center gap-3 lg:gap-4">
           <motion.div
-            className="relative group cursor-pointer"
-            whileHover={{ scale: 1.05 }}
+            className="relative group rounded-xl"
+            whileHover={{ scale: 1.04, y: -1 }}
             transition={{ type: 'spring', stiffness: 400, damping: 17 }}
           >
             {/* Logo glow */}
-            <div className="absolute inset-0 bg-blue200/20 rounded-lg blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-1 rounded-xl bg-blue200/25 blur-lg opacity-0 transition-opacity duration-300 group-hover:opacity-70" />
 
-            {/* Logo container */}
-            <div className="relative bg-gradient-to-br from-blue200 to-blue300 p-2 lg:p-2.5 rounded-lg shadow-lg">
-              <FontAwesomeIcon
-                icon={faTerminal}
-                className="w-4 h-4 lg:w-5 lg:h-5 text-white"
+            <Link href="/" aria-label="GeniusAPC home" className="relative block rounded-xl focus-visible:ring-2 focus-visible:ring-blue200 focus-visible:ring-offset-2 focus-visible:ring-offset-gray200">
+              <BrandLogo
+                priority
+                className="w-10 lg:w-12 shadow-[0_6px_16px_rgba(0,0,0,0.35)]"
               />
-            </div>
-
-            {/* Online indicator */}
-            <div className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 lg:w-3 lg:h-3 bg-green-400 rounded-full border-2 border-gray200" />
+            </Link>
           </motion.div>
 
           <div className="w-8 lg:w-10 h-px bg-gradient-to-r from-transparent via-gray300 to-transparent" />

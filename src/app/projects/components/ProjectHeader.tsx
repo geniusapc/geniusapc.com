@@ -9,7 +9,7 @@ import {
     faStar,
     faEye,
 } from '@fortawesome/free-solid-svg-icons';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import BrandLogo from '@/component/BrandLogo';
 
 interface ProjectHeaderProps {
     totalProjects: number;
@@ -68,7 +68,7 @@ const ProjectHeader = ({ totalProjects, searchTerm = '', setSearchTerm }: Projec
                 {/* Top bar */}
                 <div className="bg-[#0d1117] px-3 sm:px-4 py-2 sm:py-3 flex items-center justify-between border-b border-[#30363d] flex-wrap gap-2">
                     <div className="flex items-center gap-2 sm:gap-3 min-w-0">
-                        <FontAwesomeIcon icon={faGithub} className="text-white text-lg sm:text-xl flex-shrink-0" />
+                        <BrandLogo className="w-6 flex-shrink-0 !rounded-md" />
                         <span className="text-gray-400 text-xs sm:text-sm font-mono truncate">
                             <span className="text-blue-400">geniusapc</span>
                             <span className="mx-1">/</span>
